@@ -23,8 +23,8 @@
         self.end_count = end_count
         self.blink_timer = Timer(-2)
         # create software timer - runs periodically
-        self.blink_timer.init(period=delay, mode=Timer.PERIODIC, callback=lambda t : self.__toggle_blink__(color))
-    def __toggle_blink__(self, color):
+        self.blink_timer.init(period=delay, mode=Timer.PERIODIC, callback=lambda t : self.__toggle_blink(color))
+    def __toggle_blink(self, color):
         if self.blink_count < (self.end_count * 2):
             self.toggle(color)
             self.blink_count = self.blink_count + 1
