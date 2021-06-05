@@ -10,7 +10,7 @@
  - Green button cap x 1
 
 #### Circuit
-[LED Circuit Drawing](lesson01-11.pdf)
+[Circuit Drawing](lesson01-11.pdf)
 
 #### Instructions
  - Assemble the circuit

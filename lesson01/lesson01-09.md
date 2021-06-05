@@ -8,7 +8,7 @@
  - Red button cap x 1
 
 #### Circuit
-[LED Circuit Drawing](lesson01-09.pdf)
+[Circuit Drawing](lesson01-09.pdf)
 
 #### Code
 ```

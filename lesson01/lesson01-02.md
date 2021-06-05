@@ -5,7 +5,7 @@
  - tinyPICO board x 1
 
 #### Circuit
-[LED Circuit Drawing](lesson01-02.pdf)
+[Circuit Drawing](lesson01-02.pdf)
 
 #### Instructions
  - Assemble circuit

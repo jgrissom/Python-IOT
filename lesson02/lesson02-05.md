@@ -11,7 +11,7 @@
  - 330 Ohm resistor x 2
 
  #### Circuit
-[LED Circuit Drawing](lesson02-05.pdf)
+[Circuit Drawing](lesson02-05.pdf)
 
 #### Code
 ```

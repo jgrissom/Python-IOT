@@ -7,7 +7,7 @@
  - Micro-USB to USB-A wire
 
 #### Circuit
-[LED Circuit Drawing](lesson01-03.pdf)
+[Circuit Drawing](lesson01-03.pdf)
 
 #### Code
 ```

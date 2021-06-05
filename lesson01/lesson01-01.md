@@ -9,7 +9,7 @@
  - 330 Ohm resistor x 1
 
 #### Circuit
-[LED Circuit Drawing](lesson01-01.pdf)
+[Circuit Drawing](lesson01-01.pdf)
 
 #### Instructions
  - Acquire wires
