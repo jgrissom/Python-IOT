@@ -8,3 +8,4 @@
 ## GPIO Module
 #### 6. [Led Class - flicker method](lesson02-06.md)
 #### 7. [Led Class - blink method](lesson02-07.md)
+#### 8. [TinyPICODotStar Class - turn RGB led on/off](lesson02-08)
