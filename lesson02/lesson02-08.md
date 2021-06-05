@@ -29,7 +29,7 @@ class TinyPICODotStar(DotStar):
  - Add the TinyPICODotStar class to the GPIO module
  - Add the constructor
  - Add the on, off and kill methods
- - Using the REPL, type the following commands
+ - Using the REPL, type the following commands:
 ```
 dotstar = TinyPICODotStar()
 dotstar.on((255,0,0))
