@@ -19,6 +19,7 @@
         except:
             pass
     def blink(self, delay, end_count):
+        self.off()
         self.blink_count = 0
         self.end_count = end_count
         self.blink_timer = Timer(-2)

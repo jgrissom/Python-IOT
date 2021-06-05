@@ -8,6 +8,16 @@
 # GPIO.py
 
 ...
+    def off(self):
+        self[0] = self.BLACK
+        try:
+            self.flicker_timer.deinit()
+        except:
+            pass
+        try:
+            self.blink_timer.deinit()
+        except:
+            pass
     def toggle(self, color):
         if self[0] == self.BLACK:
             self[0] = color
@@ -32,12 +42,14 @@
             self.blink_timer.deinit()
 ```
 #### Instructions
+ - Modify the off method
  - Add the toggle, flicker and blink methods
  - Reboot the microcontroller
  - Using the REPL, type the following commands:
 ```
 dotstar = TinyPICODotStar()
-RED = (255,0,0)
+# (R, G, B, brightness)
+RED = (255, 0, 0, .5)
 dotstar.toggle(RED)
 dotstar.toggle(RED)
 dotstar.flicker(RED, 200)

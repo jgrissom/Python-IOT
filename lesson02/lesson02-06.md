@@ -8,6 +8,7 @@
 # GPIO.py
 ...
     def flicker(self, delay):
+        self.off()
         self.toggle()
         # create software timer - runs once
         self.flicker_timer = Timer(-1)
