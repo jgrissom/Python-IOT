@@ -27,4 +27,4 @@ except KeyboardInterrupt:
 
 #### Instructions
  - Create python script button.py and save to the Microcontroller
- - Import the script into main.py and test
+ - Import the module into main.py and test

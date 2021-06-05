@@ -1,4 +1,4 @@
-## Detecting a Button Press
+## Button Class
 
 #### Materials
  - Assembled circuit from Lesson 1
@@ -44,6 +44,6 @@ while True:
 import GPIO_test
 ```
 #### Instructions
- - Create python script GPIO.py and save to the microcontroller
- - Create python script GPIO_test.py and save to the microcontroller
- - Modify main.py - import GPIO_test
+ - Create python module GPIO.py and save to the microcontroller
+ - Create python module GPIO_test.py and save to the microcontroller
+ - Modify main.py - import GPIO_test module
