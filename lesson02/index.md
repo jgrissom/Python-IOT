@@ -10,3 +10,4 @@
 #### 7. [Led Class - blink method](lesson02-07.md)
 #### 8. [TinyPICODotStar Class - turn RGB led on/off](lesson02-08.md)
 #### 9. [TinyPICODotStar Class - toggle, flicker and blink methods](lesson02-09.md)
+#### 10. [TinyPICODotStar Practice](lesson02-10.md)
