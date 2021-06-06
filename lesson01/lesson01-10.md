@@ -4,7 +4,7 @@
  - Assembled circuit from Momentary switch example
 
 #### Code
-```
+```Python
 while True:
     led.value(btn.value())
     sleep(.01)

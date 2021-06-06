@@ -8,11 +8,10 @@
 # GPIO.py
 ...
     def flicker(self, delay):
-        self.off()
-        self.toggle()
+        self.on()
         # create software timer - runs once
         self.flicker_timer = Timer(-1)
-        self.flicker_timer.init(period=delay, mode=Timer.ONE_SHOT, callback=lambda t : self.toggle())
+        self.flicker_timer.init(period=delay, mode=Timer.ONE_SHOT, callback=lambda t : self.off())
     def off(self):
         super().off()
         try:

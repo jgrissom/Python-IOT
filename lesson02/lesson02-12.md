@@ -41,7 +41,7 @@ def check_battery_status(t):
     else:
         led_on(led_red, charge_status)
 
-timer = Timer(-5)
+timer = Timer(-10)
 timer.init(period=3000, mode=Timer.PERIODIC, callback=check_battery_status)
 
 try:
