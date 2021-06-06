@@ -15,7 +15,7 @@
 #### 10. [Momentary Switch driven LED](lesson01-10.md)
 
 ## Input & Output
-#### 11. [Momentary Switch driven buzzer](lesson01-11.md)
+#### 11. [Practice - Momentary Switch driven buzzer](lesson01-11.md)
 
 ## Switch Debounce
 #### 12. [Momentary Switch Debounce](lesson01-12.md)

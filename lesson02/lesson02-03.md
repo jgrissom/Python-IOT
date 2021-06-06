@@ -4,7 +4,7 @@
  - Assembled circuit from LED class - toggle method example
 
 #### Code
-```
+```Python
 # timer_test.py
 
 from machine import Timer
@@ -21,7 +21,7 @@ def turn_off_led(timer):
 # inialize the timer to excecute the callback after 1.5 seconds
 timer.init(period=1500, mode=Timer.ONE_SHOT, callback=turn_off_led)
 ```
-```
+```Python
 # main.py
 
 import timer_test

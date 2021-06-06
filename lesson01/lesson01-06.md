@@ -3,7 +3,7 @@
 #### Materials
  - Assembled circuit from Blink LED using definite repetition example
 #### Code
-```
+```Python
 from machine import Pin
 from time import sleep
 led = Pin(25, Pin.OUT)

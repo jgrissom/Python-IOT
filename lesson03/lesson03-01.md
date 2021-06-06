@@ -4,7 +4,7 @@
  - Assembled circuit from Lesson 2
 
 #### Code
-```
+```Python
 yyy
 ```
 

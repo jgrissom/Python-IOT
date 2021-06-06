@@ -4,7 +4,7 @@
  - Assembled circuit from MicroPython driven LED Example
 
 #### Code
-```
+```Python
 from machine import Pin
 from time import sleep
 led = Pin(25, Pin.OUT)
@@ -20,6 +20,6 @@ while True:
  - Press Enter twice to run
  - Press Ctrl + C to quit
  - If needed turn the LED off
- ```
+ ```Python
 led.off()
  ```

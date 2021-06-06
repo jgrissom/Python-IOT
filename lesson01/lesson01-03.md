@@ -10,7 +10,7 @@
 [Circuit Drawing](lesson01-03.pdf)
 
 #### Code
-```
+```Python
 from machine import Pin
 led = Pin(25, Pin.OUT)
 led.on()

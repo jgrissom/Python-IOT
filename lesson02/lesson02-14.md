@@ -6,7 +6,7 @@
 #### Instructions
  - In Thonny, click View - Variables
  - Using the REPL, type the following commands:
-```
+```Python
 import gc
 gc.collect()
 gc.mem_alloc()
@@ -26,7 +26,7 @@ gc.collect()
 gc.mem_free()
 ```
  - Using the REPL, type the following commands:
-```
+```Python
 # non-primitive data
 a = {'name': 'jeff'} # ref count = 1
 b = a # ref count = 2

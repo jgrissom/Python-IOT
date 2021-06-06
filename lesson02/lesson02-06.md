@@ -4,7 +4,7 @@
  - Assembled circuit from the PERIODIC timer example
 
 #### Code
-```
+```Python
 # GPIO.py
 ...
     def flicker(self, delay):
@@ -19,7 +19,7 @@
         except:
             pass
 ```
-```
+```Python
 # GPIO_test.py
 
 from GPIO import Button, Led

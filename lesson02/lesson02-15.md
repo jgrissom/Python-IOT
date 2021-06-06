@@ -5,7 +5,7 @@ This example was adapted from [https://RandomNerdTutorials.com](https://RandomNe
  - Assembled circuit from the Garbage Collection example
 
 #### Code
-```
+```Python
 # deep_sleep_test.py
 
 import machine

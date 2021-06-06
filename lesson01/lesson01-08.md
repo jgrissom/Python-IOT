@@ -3,7 +3,7 @@
 #### Materials
  - Assembled circuit from MicroPython Scripts example
 #### Code
-```
+```Python
 # main.py
 
 import led

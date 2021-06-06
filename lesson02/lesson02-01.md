@@ -4,7 +4,7 @@
  - Assembled circuit from Lesson 1
 
 #### Code
-```
+```Python
 # GPIO.py
 
 from machine import Pin
@@ -25,7 +25,7 @@ class Button(Pin):
         self.state = self.value()
         return False
 ```
-```
+```Python
 # GPIO_test.py
 
 from GPIO import Button
@@ -38,7 +38,7 @@ while True:
         print('red pressed')
     sleep(.01)
 ```
-```
+```Python
 # main.py
 
 import GPIO_test

@@ -14,7 +14,7 @@
 [Circuit Drawing](lesson02-05.pdf)
 
 #### Code
-```
+```Python
 # timer_test.py
 
 from machine import Timer

@@ -4,7 +4,7 @@
  - Assembled circuit from the ONE_SHOT timer example
 
 #### Code
-```
+```Python
 # timer_test.py
 
 from machine import Timer

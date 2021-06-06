@@ -4,7 +4,7 @@
  - Assembled circuit from the Battery voltage & charge status example
 
 #### Code
-```
+```Python
 # battery_test.py
 
 import tinypico as TinyPICO

@@ -4,7 +4,7 @@
  - Assembled circuit from Button class example
 
 #### Code
-```
+```Python
 # GPIO.py
 ...
 class Led(Pin):
@@ -13,7 +13,7 @@ class Led(Pin):
     def toggle(self):
         self.value(not self.value())
 ```
-```
+```Python
 # GPIO_test.py
 
 from GPIO import Button, Led

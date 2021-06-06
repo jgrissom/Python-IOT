@@ -1,4 +1,4 @@
-## Momentary Switch Driven Buzzer
+## Practice - Momentary Switch Driven Buzzer
 
 #### Materials
  - Assembled circuit from Momentary switch example

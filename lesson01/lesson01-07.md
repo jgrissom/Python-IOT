@@ -3,7 +3,7 @@
 #### Materials
  - Assembled circuit from MicroPython Functions example
 #### Code
-```
+```Python
 # led.py
 
 from machine import Pin
@@ -27,10 +27,10 @@ def blink(n):
  - Enter the code into the editor
  - Save the file to the MicroController as led.py
  - Using the REPL, import the file
-```
+```Python
 import led
 ```
   - Using the REPL, call the blink function
-```
+```Python
 led.blink(3)
 ```

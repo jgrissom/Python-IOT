@@ -4,7 +4,7 @@
  - Assembled circuit from Blink LED using indefinite repetition Example
 
 #### Code
-```
+```Python
 # Blink LED 5 times
 ```
 

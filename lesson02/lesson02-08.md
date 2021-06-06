@@ -4,7 +4,7 @@
  - Assembled circuit from the Led blink example
 
 #### Code
-```
+```Python
 # GPIO.py
 
 ...
@@ -30,7 +30,7 @@ class TinyPICODotStar(DotStar):
  - Add the constructor
  - Add the on, off and kill methods
  - Using the REPL, type the following commands:
-```
+```Python
 dotstar = TinyPICODotStar()
 dotstar.on((255,0,0))
 dotstar.off()

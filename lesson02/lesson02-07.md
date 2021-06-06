@@ -4,7 +4,7 @@
  - Assembled circuit from the Led flicker example
 
 #### Code
-```
+```Python
 # GPIO.py
 
 ...
@@ -33,7 +33,7 @@
         else:
             self.blink_timer.deinit()
 ```
-```
+```Python
 # GPIO_test.py
 
 from GPIO import Button, Led

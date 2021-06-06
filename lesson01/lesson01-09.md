@@ -11,7 +11,7 @@
 [Circuit Drawing](lesson01-09.pdf)
 
 #### Code
-```
+```Python
 btn = Pin(5, Pin.IN, Pin.PULL_UP)
 btn.value()
 # press button

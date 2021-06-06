@@ -4,7 +4,7 @@
  - Assembled circuit from Momentary switch driven buzzer example
 
 #### Code
-```
+```Python
 # button.py
 
 from machine import Pin

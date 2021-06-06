@@ -6,7 +6,7 @@
 #### Instructions
  - In Thonny, click View - Variables
  - Using the REPL, type the following commands:
-```
+```Python
 # primitive data
 x = 12
 y = x # y stores its own copy of 12

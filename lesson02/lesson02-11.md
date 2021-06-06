@@ -5,7 +5,7 @@
 
 #### Instructions
  - Using the REPL, type the following commands:
-```
+```Python
 import tinypico
 print(tinypico.get_battery_voltage())
 print(tinypico.get_battery_charging())

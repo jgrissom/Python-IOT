@@ -4,7 +4,7 @@
  - Assembled circuit from the RGB Led on/off example
 
 #### Code
-```
+```Python
 # GPIO.py
 
 ...
@@ -47,7 +47,7 @@
  - Add the toggle, flicker and blink methods
  - Reboot the microcontroller
  - Using the REPL, type the following commands:
-```
+```Python
 dotstar = TinyPICODotStar()
 # (R, G, B, brightness)
 RED = (255, 0, 0, .5)
