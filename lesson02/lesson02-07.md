@@ -19,6 +19,7 @@
         except:
             pass
     def blink(self, delay, end_count):
+        # set end_count = -1 for infinite blink
         self.off()
         self.blink_count = 0
         self.end_count = end_count
@@ -26,7 +27,7 @@
         # create software timer - runs periodically
         self.blink_timer.init(period=delay, mode=Timer.PERIODIC, callback=self.__toggle_blink)
     def __toggle_blink(self, timer):
-        if self.blink_count < (self.end_count * 2):
+        if (self.blink_count < (self.end_count * 2)) or self.blink_count == -1:
             self.toggle()
             self.blink_count += 1
         else:

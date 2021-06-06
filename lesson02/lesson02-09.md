@@ -26,16 +26,17 @@
     def flicker(self, color, delay):
         self.on(color)
         # create software timer - runs once
-        self.flicker_timer = Timer(-1)
+        self.flicker_timer = Timer(-3)
         self.flicker_timer.init(period=delay, mode=Timer.ONE_SHOT, callback=lambda t : self.off())
     def blink(self, color, delay, end_count):
+        # set end_count = -1 for infinite blink
         self.blink_count = 0
         self.end_count = end_count
-        self.blink_timer = Timer(-2)
+        self.blink_timer = Timer(-4)
         # create software timer - runs periodically
         self.blink_timer.init(period=delay, mode=Timer.PERIODIC, callback=lambda t : self.__toggle_blink(color))
     def __toggle_blink(self, color):
-        if self.blink_count < (self.end_count * 2):
+        if (self.blink_count < (self.end_count * 2)) or self.end_count == -1:
             self.toggle(color)
             self.blink_count = self.blink_count + 1
         else:

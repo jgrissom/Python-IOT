@@ -16,5 +16,5 @@
  - Assemble the circuit
  - Modify the GPIO_test module as follows
    * When the blue button is pressed, flicker the dotstar blue - use (255, 0, 0, .5)
-   * When the yellow button is pressed, blink the dotstar yellow 3 times - use (255, 255, 0, .5)
+   * When the yellow button is pressed, blink the dotstar yellow infinitely - use (255, 255, 0, .5)
    * Don't forget to kill the dotstar when the program ends
