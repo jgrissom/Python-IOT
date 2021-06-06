@@ -17,3 +17,5 @@
 ## Memory Management
 #### 13. [Primitive/Non-Primitive Data](lesson02-13.md)
 #### 14. [Garbage Collection](lesson02-14.md)
+## Power Management
+#### 15. [Deep Sleep](lesson02-15.md)
