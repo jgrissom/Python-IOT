@@ -1,4 +1,4 @@
-## Connect ESP32 to WiFi
+## Connect ESP32 to Wi-Fi
 
 #### Materials
  - Assembled circuit from Lesson 2

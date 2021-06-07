@@ -1,7 +1,7 @@
-## Practice: Connect ESP32 to WiFi
+## Practice: Connect ESP32 to Wi-Fi
 
 #### Materials
- - Assembled circuit from Connect ESP32 to WiFi example
+ - Assembled circuit from Connect ESP32 to Wi-Fi example
 
 #### Instructions
  - Add the Buzzer class to the GPIO module (**Hint** it will be similar to the Led class)
