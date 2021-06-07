@@ -9,4 +9,4 @@
    - Add the flicker method (timer id -5)
    - Add the off() method (make sure to deinit the flicker timer)
  - While Wi-Fi is connecting, blink the dotstar red (255, 0, 0, .5) continuosly
- - Once Wi-Fi is connected, flicker the buzzer for 100 ms and blink the dotstar green 3 times
+ - Once Wi-Fi is connected, flicker the buzzer for 100 ms and blink the dotstar green (0, 255, 0, .5) 3 times
