@@ -5,8 +5,26 @@
 
 #### Code
 ```Python
-yyy
-```
+wifi.py
 
+def do_connect():
+    from time import sleep
+    import network
+    sta_if = network.WLAN(network.STA_IF)
+    if not sta_if.isconnected():
+        print('connecting to network...')
+        sta_if.active(True)
+        sta_if.connect('<essid>', '<password>')
+        while not sta_if.isconnected():
+            pass
+    print('network config:', sta_if.ifconfig())
+```
+```Python
+main.py
+
+import wifi
+wifi.do_connect()
+```
 #### Instructions
- - zzz
+ - Create wifi module, do_connect() method
+ - import wifi module into main module - call do_connect() method
