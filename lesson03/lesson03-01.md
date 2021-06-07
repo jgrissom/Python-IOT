@@ -7,7 +7,7 @@
 ```Python
 # wifi.py
 
-def do_connect():
+def connect():
     import network
     sta_if = network.WLAN(network.STA_IF)
     if not sta_if.isconnected():
@@ -22,8 +22,8 @@ def do_connect():
 # main.py
 
 import wifi
-wifi.do_connect()
+wifi.connect()
 ```
 #### Instructions
- - Create wifi module, do_connect() method
- - import wifi module into main module - call do_connect() method
+ - Create wifi module, connect() method
+ - import wifi module into main module - call connect() method
