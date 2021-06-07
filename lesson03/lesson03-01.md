@@ -5,7 +5,7 @@
 
 #### Code
 ```Python
-wifi.py
+# wifi.py
 
 def do_connect():
     import network
@@ -19,7 +19,7 @@ def do_connect():
     print('network config:', sta_if.ifconfig())
 ```
 ```Python
-main.py
+# main.py
 
 import wifi
 wifi.do_connect()
