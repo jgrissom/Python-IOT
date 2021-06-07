@@ -10,11 +10,11 @@
 #### 7. [MicroPython Scripts](lesson01-07.md)
 #### 8. [MicroPython Boot Scripts](lesson01-08.md)
 
-## Momentary Switch
+## Input Devices - Momentary Switch
 #### 9. [Momentary Switch](lesson01-09.md)
 #### 10. [Momentary Switch driven LED](lesson01-10.md)
 
-## Input & Output
+## I/O
 #### 11. [Practice - Momentary Switch driven buzzer](lesson01-11.md)
 
 ## Switch Debounce
