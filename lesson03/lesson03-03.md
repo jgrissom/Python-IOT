@@ -37,6 +37,7 @@ json_test.read_data()
 ```
 
 #### Instructions
+ - Assemble the circuit
  - Create the json_test module and save it to the microcontroller
  - Import the json_test module into the main module and call the write_data() & read_data() methods
  - Examine the created file: color.json
