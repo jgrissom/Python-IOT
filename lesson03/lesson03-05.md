@@ -2,16 +2,8 @@
 
 #### Materials
  - Assembled circuit from Install MicroPython urequests example
- - 3.00" x 1 white wire
- - 1.25" x 1 black wire
- - Small momemtary switch x 1
- - White, black or gray button cap x 1
-
-#### Circuit
-[Circuit Drawing](lesson03-05.pdf)
 
 #### Instructions
- - Assemble the circuit
  - Create a get request - using the REPL, type:
 ```Python
 import urequests as requests
