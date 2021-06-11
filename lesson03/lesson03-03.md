@@ -7,7 +7,7 @@
 ```Python
 # json_test.py
 
-import json
+import ujson as json
 
 def write_data():
     out_data = {"word": "jeff", "color": "green"}

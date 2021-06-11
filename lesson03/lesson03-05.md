@@ -10,14 +10,31 @@
 #### Circuit
 [Circuit Drawing](lesson03-05.pdf)
 
-#### Code
-```Python
-# yyy
-
-xxx
-```
-
 #### Instructions
  - Assemble the circuit
- - xxx
-
+ - Create a get request - using the REPL, type:
+```Python
+import urequests as requests
+base_url = 'https://nugatory.azurewebsites.net'
+r = requests.get(base_url + '/api/word')
+r.status_code
+r.text
+```
+ - Create a post request - using the REPL, type:
+```Python
+import ujson as json
+payload = { 'word': 'jeff', 'color': 'green' }
+hdr = { 'Content-Type': 'application/json' }
+r = requests.post(base_url + '/api/word', headers = hdr, data = json.dumps(payload))
+r.status_code
+r.text
+```
+- Recreate the get request from the previous step
+- Create a get request to returbn a single object - using the REPL, type:
+```Python
+# replace ??? with a valid id
+# also try with an invalid id
+r = requests.get(base_url + '/api/word/???')
+r.status_code
+r.text
+```
