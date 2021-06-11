@@ -29,12 +29,10 @@ r = requests.post(base_url + '/api/word', headers = hdr, data = json.dumps(paylo
 r.status_code
 r.text
 ```
-- Recreate the get request from the previous step
-- Create a get request to returbn a single object - using the REPL, type:
+ - Recreate the get request from the previous step
+ - Create a get request to returbn a single object - using the REPL, type:
 ```Python
-# replace ??? with a valid id
-# also try with an invalid id
-r = requests.get(base_url + '/api/word/???')
+r = requests.get(base_url + '/api/word/2')
 r.status_code
 r.text
 ```
