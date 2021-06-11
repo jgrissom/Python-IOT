@@ -30,7 +30,7 @@ r.status_code
 r.text
 ```
  - Recreate the get request from the previous step
- - Create a get request to returbn a single object - using the REPL, type:
+ - Create a get request to return a single object - using the REPL, type:
 ```Python
 r = requests.get(base_url + '/api/word/2')
 r.status_code
