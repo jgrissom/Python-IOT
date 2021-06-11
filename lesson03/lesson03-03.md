@@ -2,13 +2,6 @@
 
 #### Materials
  - Assembled circuit from Connect ESP32 to Wi-Fi example
- - 3.00" x 1 white wire
- - 1.25" x 1 black wire
- - Small momemtary switch x 1
- - White, black or gray button cap x 1
-
-#### Circuit
-[Circuit Drawing](lesson03-03.pdf)
 
 #### Code
 ```Python
@@ -37,7 +30,6 @@ json_test.read_data()
 ```
 
 #### Instructions
- - Assemble the circuit
  - Create the json_test module and save it to the microcontroller
  - Import the json_test module into the main module and call the write_data() & read_data() methods
  - Examine the created file: color.json
