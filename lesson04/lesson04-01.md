@@ -5,13 +5,14 @@
 
 #### Instructions
  - Using the REPL, type the following commands:
-#### Code
 ```Python
 from machine import Pin, PWM
 p = Pin(27, Pin.OUT)
 led = PWM(p)
+
 # set PWM frequency 500Hz
 led.freq(500)
+
 # set duty cycle to all on
 led.duty(1023)
 # set duty cycle to 50%
