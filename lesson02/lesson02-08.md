@@ -8,6 +8,7 @@
 # GPIO.py
 
 ...
+from machine import SoftSPI
 import tinypico as TinyPICO
 from micropython_dotstar import DotStar
 ...
