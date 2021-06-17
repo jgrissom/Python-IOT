@@ -31,6 +31,11 @@ try:
             buzzer.duty(0)
 except KeyboardInterrupt:
     print('goodbye')
+    buzzer.duty(0)
+    buzzer.deinit()
+except:
+    print("error")
+    buzzer.duty(0)
     buzzer.deinit()
 ```
 #### Instructions

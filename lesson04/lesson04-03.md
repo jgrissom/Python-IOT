@@ -1,4 +1,4 @@
-## PWM - Buzzer Practice
+## PWM - Buzzer Practice 1
 
 #### Materials
  - Assembled circuit from PWM Buzzer example
