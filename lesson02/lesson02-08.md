@@ -8,6 +8,9 @@
 # GPIO.py
 
 ...
+import tinypico as TinyPICO
+from micropython_dotstar import DotStar
+...
 class TinyPICODotStar(DotStar):
     def __init__(self):
         # Configure SPI for controlling the DotStar
@@ -26,6 +29,7 @@ class TinyPICODotStar(DotStar):
         TinyPICO.set_dotstar_power(False)
 ```
 #### Instructions
+ - Import helper modules into GPIO module
  - Add the TinyPICODotStar class to the GPIO module
  - Add the constructor
  - Add the on, off and kill methods
