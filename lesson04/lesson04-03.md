@@ -8,8 +8,8 @@
  - [Note Frequency Chart](NoteFrequencyChart.pdf)
  - When you are finished, you can play **Mary Had A Little Lamb**:
  
-> blue, green, red, green, blue, blue, blue
-> green, green, green
-> blue, blue, blue
+> blue, green, red, green, blue, blue, blue<br>
+> green, green, green<br>
+> blue, blue, blue<br>
 > blue, green, red, green, blue, blue, blue, red, green, green, blue, green, red
  
