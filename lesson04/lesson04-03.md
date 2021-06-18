@@ -10,7 +10,7 @@
 ...
 from machine import PWM
 ...
-class Buzzer(PWM):
+class PWMBuzzer(PWM):
     def __init__(self, pin):
         super().__init__(Pin(pin, Pin.OUT))
         self.duty(0)
@@ -21,11 +21,48 @@ class Buzzer(PWM):
         self.flicker_timer.init(period=delay, mode=Timer.ONE_SHOT, callback=lambda t : self.duty(0))
 ```
 
+```Python
+# keyboard.py
+
+from GPIO import Button, PWMBuzzer
+from time import sleep
+
+red_btn = Button(5)
+green_btn = Button(22)
+blue_btn = Button(21)
+yellow_btn = Button(32)
+
+buzzer = PWMBuzzer(4)
+    
+try:
+    while True:
+        if (red_btn.pressed()):
+            # C (octave 4)
+            buzzer.flicker(10, 262, 200)
+        elif (green_btn.pressed()):
+            # D (octave 4)
+            buzzer.flicker(10, 294, 200)
+        elif (blue_btn.pressed()):
+            # E (octave 4)
+            buzzer.flicker(10, 330, 200)
+        sleep(.01)
+            
+except KeyboardInterrupt:
+    print('goodbye')
+    buzzer.duty(0)
+except:
+    print("error")
+    buzzer.duty(0)
+```
+
 #### Instructions
- - Modify the GPIO module - add the Buzzer class and flicker method
- - Using the keyboard module created in the PWM Buzzer example as your guide, play D (octave 4) when the green button is pressed and play E (octave 4) when the blue button is pressed
- - [Note Frequency Chart](NoteFrequencyChart.pdf)
- - When you are finished, you can play **Mary Had A Little Lamb**:
+ - Modify the GPIO module - add the PWMBuzzer class and flicker method
+ - Create the keyboard module
+ - Using the REPL, type the following commands
+```Python
+import keyboard
+```
+**Mary Had A Little Lamb**:
  
 ##### blue, green, red, green, blue, blue, blue
 

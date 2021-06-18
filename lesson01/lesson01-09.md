@@ -7,7 +7,6 @@
  - Momentary switch x 1
  - Red button cap x 1
 
-#### Circuit
 [Circuit Drawing](lesson01-09.pdf)
 
 #### Code

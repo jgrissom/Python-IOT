@@ -10,7 +10,6 @@
  - 1.25" x 1 yellow wire
  - 330 Ohm resistor x 2
 
-#### Circuit
 [Circuit Drawing](lesson02-05.pdf)
 
 #### Code

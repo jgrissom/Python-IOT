@@ -7,7 +7,6 @@
  - Small momemtary switch x 1
  - White, black or gray button cap x 1
 
-#### Circuit
 [Circuit Drawing](lesson03-06.pdf)
 
 #### Instructions

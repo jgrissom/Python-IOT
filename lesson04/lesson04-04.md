@@ -3,22 +3,16 @@
 #### Materials
  - Assembled circuit from PWM Buzzer example
 
-#### Code
-```Python
-# main.py
 
-import songs
-songs.play("little_lamb")
-```
+[Note Frequency Chart](lesson03-06.pdf)
+#### Code
 ```Python
 # songs.py
 
-from machine import Pin,  PWM
+from GPIO import PWMBuzzer
 from time import sleep
 
-p15 = Pin(15,  Pin.OUT)
-buzzer = PWM(p15)
-buzzer.duty(0)
+buzzer = PWMBuzzer(4)
 
 # use lists to store note frequencies for octaves 0-8
 c = [ 16, 33, 65, 131, 262, 523, 1047, 2093, 4186 ] 
@@ -33,6 +27,7 @@ b = [ 31, 62, 123, 247, 494, 988, 1976, 3951, 7902 ]
 playlist = {
     "little_lamb": [ e[5], d[5], c[5], d[5], e[5], e[5], e[5], 0, d[5], d[5], d[5], 0, e[5], e[5], e[5], 0, e[5], d[5], c[5], d[5], e[5], e[5], e[5], c[5], d[5], d[5], e[5], d[5], c[5] ],
     "twinkle_twinkle": [ g[5], g[5], d[6], d[6], e[6], e[6], d[6], 0, c[6], c[6], b[5], b[5], a[5], a[5], g[5], 0, d[6], d[6], c[6], c[6], b[5], b[5], a[5], 0, d[6], d[6], c[6], c[6], b[5], b[5], a[5], 0, g[5], g[5], d[6], d[6], e[6], e[6], d[6], 0, c[6], c[6], b[5], b[5], a[5], a[5], g[5] ],
+    # TODO: DO-RE-MI-FA-SO-LA-TI-DO
 }
 
 def play(track):
@@ -43,16 +38,19 @@ def play(track):
                 buzzer.freq(note)
             sleep(.3)
             buzzer.duty(0)
-        buzzer.deinit()
     except KeyboardInterrupt:
         print('goodbye')
         buzzer.duty(0)
-        buzzer.deinit()
     except:
         print('error')
         buzzer.duty(0)
-        buzzer.deinit()
 ```
 #### Instructions
  - Create the songs module
- - Import the songs module into the main module and play a song
+ - From the REPL, type the following commands:
+```Python
+import songs
+songs.play("little_lamb")
+songs.play("twinkle_twinkle")
+```
+- On your own, add DO-RE-MI-FA-SO-LA-TI-DO to the playlist and test it using the REPL

@@ -8,7 +8,6 @@
  - LED x 1 red
  - 330 Ohm resistor x 1
 
-#### Circuit
 [Circuit Drawing](lesson01-01.pdf)
 
 #### Instructions

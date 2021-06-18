@@ -9,7 +9,6 @@
  - Blue button cap x 1
  - Yellow button cap x 1
 
-#### Circuit
 [Circuit Drawing](lesson02-10.pdf)
 
 #### Instructions

@@ -6,7 +6,6 @@
  - 1.00" x 1 black wire
  - Micro-USB to USB-A wire
 
-#### Circuit
 [Circuit Drawing](lesson01-03.pdf)
 
 #### Code

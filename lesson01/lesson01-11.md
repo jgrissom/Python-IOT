@@ -9,7 +9,6 @@
  - Momentary switch x 1
  - Green button cap x 1
 
-#### Circuit
 [Circuit Drawing](lesson01-11.pdf)
 
 #### Instructions

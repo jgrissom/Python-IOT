@@ -4,7 +4,6 @@
  - Assembled circuit from Battery Driven LED Example
  - tinyPICO board x 1
 
-#### Circuit
 [Circuit Drawing](lesson01-02.pdf)
 
 #### Instructions
