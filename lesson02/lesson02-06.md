@@ -6,6 +6,9 @@
 #### Code
 ```Python
 # GPIO.py
+
+...
+from machine import Timer
 ...
     def flicker(self, delay):
         self.on()
