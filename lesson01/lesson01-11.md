@@ -4,7 +4,7 @@
  - Assembled circuit from Momentary switch example
  - 2.25" x 1 green wire
  - 1.25" x 2 black wire
- - 1.25" x 1 white wire
+ - 1.50" x 1 white wire
  - Active buzzer x 1
  - Momentary switch x 1
  - Green button cap x 1

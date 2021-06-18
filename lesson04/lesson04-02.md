@@ -3,41 +3,18 @@
 #### Materials
  - Assembled circuit from PWM Led example
 
-#### Code
-```Python
-# keyboard.py
-
-from machine import Pin, PWM
-from time import sleep
-
-red = Pin(5, Pin.IN, Pin.PULL_UP)
-
-p = Pin(15, Pin.OUT)
-buzzer = PWM(p)
-buzzer.duty(0)
-    
-try:
-    while True:
-        r1 = red.value()
-        
-        sleep(0.01)
-        
-        r2 = red.value()
-        
-        if r1 and not r2:
-            buzzer.freq(262)
-            buzzer.duty(10)
-        elif not r1 and r2:
-            buzzer.duty(0)
-except KeyboardInterrupt:
-    print('goodbye')
-    buzzer.duty(0)
-    buzzer.deinit()
-except:
-    print("error")
-    buzzer.duty(0)
-    buzzer.deinit()
-```
 #### Instructions
- - Create the keyboard module
- - Using the REPL, imoport the module and test the red button - the buzzer should play C (octave 4)
+ - Using the REPL, type the following commands
+```Python
+from machine import Pin, PWM
+p = Pin(15, Pin.OUT)
+pwm = PWM(p, freq=0, duty=0)
+pwm.freq(262) # C (octave 4)
+pwm.duty(10)
+pwm.duty(0)
+pwm.duty(20)
+pwm.duty(0)
+pwm.freq(523) # C (octave 5)
+pwm.duty(10)
+pwm.deinit()
+```
