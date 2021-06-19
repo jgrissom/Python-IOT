@@ -8,7 +8,7 @@
 ```Python
 from machine import Pin, PWM
 p = Pin(4, Pin.OUT)
-pwm = PWM(p, freq=0, duty=0)
+pwm = PWM(p, duty=0)
 pwm.freq(262) # C (octave 4)
 pwm.duty(10)
 pwm.duty(0)
@@ -17,4 +17,5 @@ pwm.duty(0)
 pwm.freq(523) # C (octave 5)
 pwm.duty(10)
 pwm.duty(0)
+pwm.deinit()
 ```
