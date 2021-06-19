@@ -3,16 +3,15 @@
 #### Materials
  - Assembled circuit from PWM Buzzer example
 
-
 [Note Frequency Chart](lesson03-06.pdf)
 #### Code
 ```Python
 # songs.py
 
-from GPIO import PWMBuzzer
+from machine import Pin, PWM
 from time import sleep
 
-buzzer = PWMBuzzer(4)
+buzzer = PWM(Pin(4, Pin.OUT), duty=0)
 
 # use lists to store note frequencies for octaves 0-8
 c = [ 16, 33, 65, 131, 262, 523, 1047, 2093, 4186 ] 
@@ -30,20 +29,26 @@ playlist = {
     # TODO: DO-RE-MI-FA-SO-LA-TI-DO
 }
 
+def buzz(duty, freq, duration):
+    buzzer.duty(duty)
+    buzzer.freq(freq)
+    sleep(duration)
+    buzzer.duty(0)
+
 def play(track):
     try:
         for note in playlist[track]:
             if note != 0:
-                buzzer.duty(10)
-                buzzer.freq(note)
-            sleep(.3)
+                buzz(10, note, .3)
+            else:
+                sleep(.3)
             buzzer.duty(0)
     except KeyboardInterrupt:
         print('goodbye')
-        buzzer.duty(0)
+        buzzer.deinit()
     except:
         print('error')
-        buzzer.duty(0)
+        buzzer.deinit()
 ```
 #### Instructions
  - Create the songs module
