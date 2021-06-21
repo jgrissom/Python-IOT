@@ -7,7 +7,7 @@
  - Using the REPL, type the following commands:
 ```Python
 from machine import Pin, PWM
-p = Pin(27, Pin.OUT)
+p = Pin(26, Pin.OUT)
 led = PWM(p)
 
 # set PWM frequency 500Hz

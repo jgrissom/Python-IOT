@@ -11,12 +11,11 @@ from GPIO import Button
 from time import sleep
 from machine import Pin, PWM
 
-red_btn = Button(5)
-green_btn = Button(22)
-blue_btn = Button(21)
-yellow_btn = Button(32)
+btn_red = Button(18)
+btn_green = Button(5)
+btn_blue = Button(22)
 
-buzzer = PWM(Pin(4, Pin.OUT), duty=0)
+buzzer = PWM(Pin(33, Pin.OUT), duty=0)
 
 def buzz(duty, freq, duration):
     buzzer.duty(duty)
@@ -26,13 +25,13 @@ def buzz(duty, freq, duration):
     
 try:
     while True:
-        if (red_btn.pressed()):
+        if (btn_red.pressed()):
             # C (octave 4)
             buzz(10, 262, .2)
-        elif (green_btn.pressed()):
+        elif (btn_green.pressed()):
             # D (octave 4)
             buzz(10, 294, .2)
-        elif (blue_btn.pressed()):
+        elif (btn_blue.pressed()):
             # E (octave 4)
             buzz(10, 330, .2)
         sleep(.01)

@@ -11,7 +11,7 @@
 from machine import Pin, PWM
 from time import sleep
 
-buzzer = PWM(Pin(4, Pin.OUT), duty=0)
+buzzer = PWM(Pin(33, Pin.OUT), duty=0)
 
 # use lists to store note frequencies for octaves 0-8
 c = [ 16, 33, 65, 131, 262, 523, 1047, 2093, 4186 ] 

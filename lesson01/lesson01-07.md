@@ -10,13 +10,13 @@ from machine import Pin
 from time import sleep
 
 def blink(n):
-    l = Pin(25, Pin.OUT)
+    led_red = Pin(25, Pin.OUT)
     counter = 1
     while counter <= n:
         print(counter)
-        l.on()
+        led_red.on()
         sleep(.25)
-        l.off()
+        led_red.off()
         sleep(.25)
         counter += 1
     print('done')

@@ -6,7 +6,7 @@
 #### Code
 ```Python
 while True:
-    led.value(btn.value())
+    led_red.value(btn_red.value())
     sleep(.01)
 ```
 

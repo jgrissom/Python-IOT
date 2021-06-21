@@ -39,10 +39,10 @@
 from GPIO import Button, Led
 from time import sleep
 
-btn_red = Button(5)
-btn_green = Button(22)
+btn_red = Button(25)
+btn_green = Button(26)
 led_red = Led(25)
-led_green = Led(27)
+led_green = Led(26)
 
 try:
     while True:

@@ -7,7 +7,7 @@
  - Using the REPL, type the following commands - if needed, type buzzer.deinit()
 ```Python
 from machine import Pin, PWM
-p = Pin(4, Pin.OUT)
+p = Pin(33, Pin.OUT)
 pwm = PWM(p, duty=0)
 pwm.freq(262) # C (octave 4)
 pwm.duty(10)

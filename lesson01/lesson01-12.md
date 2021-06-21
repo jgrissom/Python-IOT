@@ -10,13 +10,13 @@
 from machine import Pin
 from time import sleep
 
-btn = Pin(22, Pin.IN, Pin.PULL_UP)
+btn_green = Pin(5, Pin.IN, Pin.PULL_UP)
 
 try:
     while True:
-        first = btn.value()
+        first = btn_green.value()
         sleep(0.01)
-        second = btn.value()
+        second = btn_green.value()
         if first and not second:
             print('Button pressed!')
         elif not first and second:

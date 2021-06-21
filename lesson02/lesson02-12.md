@@ -12,8 +12,8 @@ from GPIO import Led
 from time import sleep
 from machine import Timer
 
-led_green = Led(27)
-led_yellow = Led(26)
+led_green = Led(26)
+led_yellow = Led(15)
 led_red = Led(25)
 
 def leds_off():
@@ -41,6 +41,7 @@ def check_battery_status(t):
     else:
         led_on(led_red, charge_status)
 
+leds_off()
 timer = Timer(-10)
 timer.init(period=3000, mode=Timer.PERIODIC, callback=check_battery_status)
 
