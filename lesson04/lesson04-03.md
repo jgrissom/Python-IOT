@@ -38,10 +38,8 @@ try:
             
 except KeyboardInterrupt:
     print('goodbye')
-    buzzer.deinit()
-except:
-    print("error")
-    buzzer.deinit()
+    buzzer.freq(0)
+    buzzer.duty(0)
 ```
 
 #### Instructions

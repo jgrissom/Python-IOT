@@ -36,11 +36,15 @@ def buzz(duty, freq, duration):
     buzzer.duty(0)
 
 def play(track):
-    for note in playlist[track]:
-        if note != 0:
-            buzz(10, note, .3)
-        else:
-            sleep(.3)
+    try:
+        for note in playlist[track]:
+            if note != 0:
+                buzz(10, note, .3)
+            else:
+                sleep(.3)
+            buzzer.duty(0)
+    except KeyboardInterrupt:
+        buzzer.freq(0)
         buzzer.duty(0)
 ```
 #### Instructions

@@ -49,8 +49,6 @@ def find(name):
 ```Python
 # rtttl.py
 
-#!/usr/bin/env python3
-#
 # You can find a description of RTTTL here: https://en.wikipedia.org/wiki/Ring_Tone_Transfer_Language
 
 NOTE = [
@@ -175,6 +173,7 @@ class RTTTL:
             msec = (self.msec_per_whole_note / duration) * duration_multiplier
 
             #print('note ', note, 'duration', duration, 'octave', octave, 'freq', freq, 'msec', msec)
+
             yield freq, msec
 
 ```
@@ -186,7 +185,7 @@ import songs
 from machine import Pin, PWM
 from time import sleep
 
-pwm = PWM(Pin(33, Pin.OUT), freq=0, duty=0)
+pwm = PWM(Pin(33, Pin.OUT), freq=550, duty=0)
 
 def play_tone(freq, msec):
     print('freq = {:6.1f} msec = {:6.1f}'.format(freq, msec))
@@ -199,9 +198,11 @@ def play_tone(freq, msec):
 
 def play(song):
     tune = RTTTL(songs.find(song))
-
-    for freq, msec in tune.notes():
-        play_tone(freq, msec)
+    try:
+        for freq, msec in tune.notes():
+            play_tone(freq, msec)
+    except KeyboardInterrupt:
+        play_tone(0, 0)
 ```
 #### Instructions
  - Create the songs, rtttl, and rtttl_player modules
