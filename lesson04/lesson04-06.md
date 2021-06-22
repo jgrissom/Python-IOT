@@ -36,10 +36,10 @@ COLOR_BLUE = (0, 0, 255, .5)
 COLOR_YELLOW = (255, 255, 0, .5)
 colors = [ COLOR_RED, COLOR_GREEN, COLOR_BLUE, COLOR_YELLOW ]
 
-NOTE_RED = 440
-NOTE_GREEN = 165
-NOTE_BLUE = 330
-NOTE_YELLOW = 277
+NOTE_RED = 440     # a  (4th octave)
+NOTE_GREEN = 165   # e  (3rd octave)
+NOTE_BLUE = 330    # e  (4th octave)
+NOTE_YELLOW = 277  # c# (4th octave)
 notes = [ NOTE_RED, NOTE_GREEN, NOTE_BLUE, NOTE_YELLOW ]
 
 BTN_RED_PIN = 18
