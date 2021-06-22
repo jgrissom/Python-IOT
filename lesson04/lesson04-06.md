@@ -28,7 +28,6 @@ import pymon
 
 from GPIO import Button, Led, TinyPICODotStar, PWMBuzzer
 from time import sleep
-import machine
 
 COLOR_RED = (255, 0, 0, .5)
 COLOR_GREEN = (0, 255, 0, .5)
