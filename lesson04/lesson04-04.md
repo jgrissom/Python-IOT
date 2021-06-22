@@ -1,4 +1,4 @@
-## PWM - Buzzer Practice 2
+## PWM - Buzzer Play Songs
 
 #### Materials
  - Assembled circuit from PWM Buzzer example
@@ -6,7 +6,7 @@
 [Note Frequency Chart](lesson03-06.pdf)
 #### Code
 ```Python
-# songs.py
+# simple_songs.py
 
 from machine import Pin, PWM
 from time import sleep
@@ -36,26 +36,19 @@ def buzz(duty, freq, duration):
     buzzer.duty(0)
 
 def play(track):
-    try:
-        for note in playlist[track]:
-            if note != 0:
-                buzz(10, note, .3)
-            else:
-                sleep(.3)
-            buzzer.duty(0)
-    except KeyboardInterrupt:
-        print('goodbye')
-        buzzer.deinit()
-    except:
-        print('error')
-        buzzer.deinit()
+    for note in playlist[track]:
+        if note != 0:
+            buzz(10, note, .3)
+        else:
+            sleep(.3)
+        buzzer.duty(0)
 ```
 #### Instructions
  - Create the songs module
  - From the REPL, type the following commands:
 ```Python
-import songs
-songs.play("little_lamb")
-songs.play("twinkle_twinkle")
+import simple_songs
+simple_songs.play("little_lamb")
+simple_songs.play("twinkle_twinkle")
 ```
 - On your own, add DO-RE-MI-FA-SO-LA-TI-DO to the playlist and test it using the REPL

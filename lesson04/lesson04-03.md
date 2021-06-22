@@ -1,4 +1,4 @@
-## PWM - Buzzer GPIO
+## PWM - Buzzer Keyboard
 
 #### Materials
  - Assembled circuit from PWM Buzzer example
