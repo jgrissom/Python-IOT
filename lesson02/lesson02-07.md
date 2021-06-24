@@ -27,7 +27,7 @@
         # create software timer - runs periodically
         self.blink_timer.init(period=delay, mode=Timer.PERIODIC, callback=self.__toggle_blink)
     def __toggle_blink(self, timer):
-        if (self.blink_count < (self.end_count * 2)) or self.blink_count == -1:
+        if (self.blink_count < (self.end_count * 2)) or self.end_count == -1:
             self.toggle()
             self.blink_count += 1
         else:
