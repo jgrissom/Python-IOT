@@ -36,6 +36,7 @@ class TinyPICODotStar(DotStar):
  - Add the on, off and kill methods
  - Using the REPL, type the following commands:
 ```Python
+from GPIO import TinyPICODotStar
 dotstar = TinyPICODotStar()
 dotstar.on((255,0,0))
 dotstar.off()
