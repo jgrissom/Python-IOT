@@ -7,7 +7,7 @@
 # main.py
 
 import led
-blink(7)
+led.blink(7)
 ```
 
 #### Instructions

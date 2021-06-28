@@ -6,7 +6,7 @@
 ```Python
 from machine import Pin
 from time import sleep
-led_red = Pin(25, Pin.OUT)
+led_red = Pin(26, Pin.OUT)
 def blink(n):
     counter = 1
     while counter <= n:

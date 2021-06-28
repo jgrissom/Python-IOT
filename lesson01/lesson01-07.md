@@ -10,7 +10,7 @@ from machine import Pin
 from time import sleep
 
 def blink(n):
-    led_red = Pin(25, Pin.OUT)
+    led_red = Pin(26, Pin.OUT)
     counter = 1
     while counter <= n:
         print(counter)

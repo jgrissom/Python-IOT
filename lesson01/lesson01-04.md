@@ -7,7 +7,7 @@
 ```Python
 from machine import Pin
 from time import sleep
-led_red = Pin(25, Pin.OUT)
+led_red = Pin(26, Pin.OUT)
 while True:
     led_red.on()
     sleep(.5)

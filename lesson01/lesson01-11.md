@@ -2,7 +2,7 @@
 
 #### Materials
  - Assembled circuit from Momentary switch example
- - 2.75" x 1 black wire
+ - 2.50" x 2 white wire
  - 2.25" x 1 green wire
  - 1.00" x 2 black wire
  - Active buzzer x 1
@@ -16,5 +16,5 @@
  - Pay careful attention to the row & column placement of the components
  - An active buzzer has polarity (like an led), however, resistance is not needed
  - An active buzzer works like an led - when current is applied to it, it will play a sound
- - Create a new python script (buzzer.py) which activates the buzzer (only) while a button is pressed
+ - Create a new python script (buzzer.py) which activates the buzzer only while a button is pressed
  - Modify the main.py boot script to import the buzzer.py script
