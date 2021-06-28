@@ -1,36 +1,13 @@
-## Read/Write JSON Data to File
+## Practice: Connect ESP32 to Wi-Fi
 
 #### Materials
- - Assembled circuit from Connect ESP32 to Wi-Fi example
-
-#### Code
-```Python
-# json_test.py
-
-import ujson as json
-
-def write_data():
-    out_data = {"word": "jeff", "color": "green"}
-    out_file = open("color.json", "w")
-    json.dump(out_data, out_file)
-    out_file.close()
-
-def read_data():
-    in_file = open("color.json")
-    in_data = json.load(in_file)
-    print(in_data["word"])
-    print(in_data["color"])
-```
-```Python
-# main.py
-
-import json_test
-json_test.write_data()
-json_test.read_data()
-```
+ - Assembled circuit from Wi-Fi Timeout example
 
 #### Instructions
- - Create the json_test module and save it to the microcontroller
- - Import the json_test module into the main module and call the write_data() & read_data() methods
- - Examine the created file: color.json
-
+ - Add the Buzzer class to the GPIO module (**Hint** it will be similar to the Led class)
+   - Add the constructor
+   - Add the flicker method (timer id -5)
+   - Add the off() method (make sure to deinit the flicker timer)
+ - While Wi-Fi is connecting, blink the dotstar white (255, 255, 255, .5) continuosly
+ - Once Wi-Fi is connected, blink the dotstar green (0, 255, 0, .5) 3 times
+ - If the Wi-Fi times out, blink the dotstar red (255, 0, 0, .5) 3 times and flicker the buzzer for 100 ms

@@ -3,6 +3,10 @@ This example was adapted from [https://RandomNerdTutorials.com](https://RandomNe
 
 #### Materials
  - Assembled circuit from the Garbage Collection example
+ - 3.50" x 1 black wire
+ - 2.00" x 1 black wire
+ - Small momemtary switch x 1
+ - White, black or gray button cap x 1
 
 [Circuit Drawing](lesson02-15.pdf)
 
@@ -33,4 +37,3 @@ machine.deepsleep()
  - Create the deep_sleep_test module
  - Using the REPL, import the deep_sleep_test module
  - When the microcontroller goes to deep sleep, you can wake it by pressing the button attached to pin 33
- - When you are finished with this example, there is no longer a need for the additional button - it can be disassembled
