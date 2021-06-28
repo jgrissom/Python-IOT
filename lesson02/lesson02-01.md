@@ -31,7 +31,7 @@ class Button(Pin):
 from GPIO import Button
 from time import sleep
 
-btn_red = Button(18)
+btn_red = Button(5)
 
 while True:
     if btn_red.pressed():

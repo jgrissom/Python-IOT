@@ -28,8 +28,8 @@ from machine import Timer
 from GPIO import Button, Led
 from time import sleep
 
-btn_red = Button(18)
-led_red = Led(25)
+btn_red = Button(5)
+led_red = Led(26)
 
 try:
     while True:
@@ -39,7 +39,13 @@ try:
 except KeyboardInterrupt:
     led_red.off()
 ```
+```Python
+# main.py
+
+import GPIO_test
+```
 #### Instructions
  - Add the flicker method to the Led class
  - Override the super class's off method to ensure that the timer is deinitialized
  - Modify the GPIO_test module to flicker the red led when the red button is pressed
+ - Modify the main module - import GPIO_test module

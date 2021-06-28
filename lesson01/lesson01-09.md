@@ -12,7 +12,7 @@
 #### Code
 ```Python
 from machine import Pin
-btn_red = Pin(18, Pin.IN, Pin.PULL_UP)
+btn_red = Pin(5, Pin.IN, Pin.PULL_UP)
 btn_red.value()
 # press button
 btn_red.value()

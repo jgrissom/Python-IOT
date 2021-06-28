@@ -48,7 +48,8 @@
  - Reboot the microcontroller
  - Using the REPL, type the following commands:
 ```Python
-dotstar = TinyPICODotStar()
+import GPIO
+dotstar = GPIO.TinyPICODotStar()
 # (R, G, B, brightness)
 RED = (255, 0, 0, .5)
 dotstar.toggle(RED)

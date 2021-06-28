@@ -17,8 +17,8 @@ from machine import Timer
 from GPIO import Led
 from time import sleep
 
-led_red = Led(25)
-led_green = Led(26)
+led_red = Led(26)
+led_green = Led(27)
 led_red.on()
 
 # initialize a software timer

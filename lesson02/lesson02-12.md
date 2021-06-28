@@ -12,9 +12,9 @@ from GPIO import Led
 from time import sleep
 from machine import Timer
 
-led_green = Led(26)
-led_yellow = Led(15)
-led_red = Led(25)
+led_green = Led(27)
+led_yellow = Led(14)
+led_red = Led(26)
 
 def leds_off():
     led_red.off()

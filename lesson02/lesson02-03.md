@@ -10,7 +10,7 @@
 from machine import Timer
 from GPIO import Led
 
-led_red = Led(25)
+led_red = Led(5)
 led_red.on()
 
 # initialize a software timer (-1)
