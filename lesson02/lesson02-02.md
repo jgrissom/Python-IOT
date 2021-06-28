@@ -20,7 +20,7 @@ from GPIO import Button, Led
 from time import sleep
 
 btn_red = Button(18)
-led_red = Led(25)
+led_red = Led(26)
 
 while True:
     if btn_red.pressed():
