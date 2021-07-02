@@ -28,7 +28,7 @@ from machine import Timer
 from GPIO import Button, Led
 from time import sleep
 
-btn_red = Button(5)
+btn_red = Button(18)
 led_red = Led(26)
 
 try:

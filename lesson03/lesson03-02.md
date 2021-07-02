@@ -1,12 +1,38 @@
-## Practice: Connect ESP32 to Wi-Fi
+## Wi-Fi Timeout
 
 #### Materials
  - Assembled circuit from Connect ESP32 to Wi-Fi example
 
+#### Code
+```Python
+# wifi.py
+
+def connect(ssid, password, timeout):
+    import network, time
+    wifi = network.WLAN(network.STA_IF)
+    
+    if not wifi.isconnected():
+        print("Connecting to WiFi network...")
+        wifi.active(True)
+        wifi.connect(ssid, password)
+        # Wait until connected
+        t = time.ticks_ms()
+        while not wifi.isconnected():
+            if time.ticks_diff(time.ticks_ms(), t) > timeout:
+                wifi.disconnect()
+                print("Timeout. Could not connect.")
+                return False
+        print("Successfully connected to " + ssid)
+        return True
+    else:
+        print("Already connected")
+        return True
+```
 #### Instructions
- - Add the Buzzer class to the GPIO module (**Hint** it will be similar to the Led class)
-   - Add the constructor
-   - Add the flicker method (timer id -5)
-   - Add the off() method (make sure to deinit the flicker timer)
- - While Wi-Fi is connecting, blink the dotstar red (255, 0, 0, .5) continuosly
- - Once Wi-Fi is connected, flicker the buzzer for 100 ms and blink the dotstar green (0, 255, 0, .5) 3 times
+ - Modify wifi module
+ - Reboot ESP32 <ctrl + d>
+ - Using the REPL, type:
+```Python
+import wifi
+wifi.connect('<ssid>', '<password>')
+```

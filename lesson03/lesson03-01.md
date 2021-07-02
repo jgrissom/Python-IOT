@@ -9,14 +9,18 @@
 
 def connect(ssid, password):
     import network
-    sta_if = network.WLAN(network.STA_IF)
-    if not sta_if.isconnected():
-        print('connecting to network...')
-        sta_if.active(True)
-        sta_if.connect(ssid, password)
-        while not sta_if.isconnected():
+    wifi = network.WLAN(network.STA_IF)
+    
+    if not wifi.isconnected():
+        print("Connecting to WiFi network...")
+        wifi.active(True)
+        wifi.connect(ssid, password)
+        while not wifi.isconnected():
             pass
-    print('network config:', sta_if.ifconfig())
+        print("Successfully connected to " + ssid)
+    else:
+        print("Already connected")
+    print('network config:', wifi.ifconfig())
 ```
 #### Instructions
  - Create wifi module, connect() method - using the REPL, type:
