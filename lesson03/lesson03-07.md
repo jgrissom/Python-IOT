@@ -1,9 +1,9 @@
 ## Practice: MicroPython urequests
 
 #### Materials
- - Assembled circuit from Install MicroPython urequests example
+ - Assembled circuit from Lesson 03-06
 
 #### Instructions
- - Create a new python module requests_test
+ - Create a new python script requests_test
  - When the red, green, blue, or yellow buttons are pressed, this module will post to the api { 'word': 'your_name', 'color': 'color_of_button_pressed' }
  - When the small button is pressed, use a get request to retrieve all words and save them to a file ('words.json') on your microcontroller

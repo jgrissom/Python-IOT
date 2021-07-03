@@ -1,7 +1,7 @@
 ## Wi-Fi Timeout
 
 #### Materials
- - Assembled circuit from Connect ESP32 to Wi-Fi example
+ - Assembled circuit from Lesson 03-01
 
 #### Code
 ```Python

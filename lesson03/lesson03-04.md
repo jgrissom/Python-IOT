@@ -1,7 +1,7 @@
 ## Read/Write JSON Data to File
 
 #### Materials
- - Assembled circuit from Connect ESP32 to Wi-Fi example
+ - Assembled circuit from Lesson 03-03
 
 #### Code
 ```Python
@@ -20,17 +20,17 @@ def read_data():
     in_data = json.load(in_file)
     print(in_data["word"])
     print(in_data["color"])
-```
-```Python
-# main.py
 
-import json_test
-json_test.write_data()
-json_test.read_data()
+def main():
+    write_data()
+    read_data()
+
+if __name__ == "__main__":
+    main()
 ```
 
 #### Instructions
- - Create the json_test module and save it to the microcontroller
- - Import the json_test module into the main module and call the write_data() & read_data() methods
+ - Create the json_test script and save it to the microcontroller
+ - Run the json_test script
  - Examine the created file: color.json
 

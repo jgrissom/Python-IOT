@@ -1,7 +1,7 @@
 ## MicroPython urequests
 
 #### Materials
- - Assembled circuit from Install MicroPython urequests example
+ - Assembled circuit from Lesson 03-05
 
 #### Instructions
  - Create a get request - using the REPL, type:
