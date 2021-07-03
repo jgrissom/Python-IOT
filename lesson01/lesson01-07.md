@@ -1,7 +1,7 @@
 ## MicroPython Script
 
 #### Materials
- - Assembled circuit from MicroPython Functions example
+ - Assembled circuit from previous lesson
 #### Code
 ```Python
 # led.py

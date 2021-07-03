@@ -1,7 +1,7 @@
 ## TinyPICODotStar Class - turn RGB led on/off
 
 #### Materials
- - Assembled circuit from Lesson 02-07
+ - Assembled circuit from previous lesson
 
 #### Code
 ```Python

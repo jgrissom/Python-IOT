@@ -1,7 +1,7 @@
 ## Practice - Momentary Switch Driven Buzzer
 
 #### Materials
- - Assembled circuit from Momentary switch example
+ - Assembled circuit from previous lesson
  - 2.50" x 2 white wire
  - 2.25" x 1 green wire
  - 1.00" x 2 black wire

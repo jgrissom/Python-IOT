@@ -1,7 +1,7 @@
 ## Momentary Switch Debouncing
 
 #### Materials
- - Assembled circuit from Momentary switch driven buzzer example
+ - Assembled circuit from previous lesson
 
 #### Code
 ```Python

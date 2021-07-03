@@ -1,7 +1,7 @@
 ## Practice: Blink LED Using Definite Repetition
 
 #### Materials
- - Assembled circuit from Blink LED using indefinite repetition Example
+ - Assembled circuit from previous lesson
 
 #### Code
 ```Python

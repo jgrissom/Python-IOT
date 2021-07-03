@@ -1,7 +1,7 @@
 ## Read/Write JSON Data to File
 
 #### Materials
- - Assembled circuit from Lesson 03-03
+ - Assembled circuit from previous lesson
 
 #### Code
 ```Python

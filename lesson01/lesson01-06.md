@@ -1,7 +1,7 @@
 ## MicroPython Functions
 
 #### Materials
- - Assembled circuit from Blink LED using definite repetition example
+ - Assembled circuit from previous lesson
 #### Code
 ```Python
 from machine import Pin

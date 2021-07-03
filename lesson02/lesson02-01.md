@@ -1,7 +1,7 @@
 ## Led Class
 
 #### Materials
- - Assembled circuit from Lesson 1
+ - Assembled circuit from previous lesson
  - Green led x 1
  - 2.00" x 1 green wire
  - 1.00" x 1 green wire

@@ -1,7 +1,7 @@
 ## Buzzer Class
 
 #### Materials
- - Assembled circuit from Lesson 02-01
+ - Assembled circuit from previous lesson
 
 #### Code
 ```Python

@@ -1,7 +1,7 @@
 ## Advanced Asynchronous Push Button
 
 #### Materials
- - Assembled circuit from Lesson 02-06
+ - Assembled circuit from previous lesson
  - 2.50" x 1 yellow wires
  - 2.25" x 2 blue wires
  - 1.00" x 2 black wires

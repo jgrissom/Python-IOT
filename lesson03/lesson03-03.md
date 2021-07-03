@@ -1,7 +1,7 @@
 ## Practice: Connect ESP32 to Wi-Fi
 
 #### Materials
- - Assembled circuit from Lesson 03-02
+ - Assembled circuit from previous lesson
 
 #### Instructions
  - While Wi-Fi is connecting, blink the dotstar white (255, 255, 255, .5) continuosly

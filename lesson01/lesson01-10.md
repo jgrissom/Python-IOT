@@ -1,7 +1,7 @@
 ## Momentary Switch Driven LED
 
 #### Materials
- - Assembled circuit from Momentary switch example
+ - Assembled circuit from previous lesson
 
 #### Code
 ```Python

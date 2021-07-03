@@ -1,7 +1,7 @@
 ## Wi-Fi Timeout
 
 #### Materials
- - Assembled circuit from Lesson 03-01
+ - Assembled circuit from previous lesson
 
 #### Code
 ```Python

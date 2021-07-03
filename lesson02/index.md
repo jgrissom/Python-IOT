@@ -10,12 +10,13 @@
 ## TinyPICODotStar Class
 #### 8. [Turn RGB led on/off](lesson02-08.md)
 #### 9. [Toggle, flicker and blink methods](lesson02-09.md)
-#### 10. [Practice](lesson02-10.md)
+#### 10. [Asyncio - cancel tasks](lesson02-10.md)
+#### 11. [Practice](lesson02-11.md)
 ## Battery Management
-#### 11. [Battery Voltage & Charge Status](lesson02-11.md)
-#### 12. [Battery Management](lesson02-12.md)
+#### 12. [Battery Voltage & Charge Status](lesson02-12.md)
+#### 13. [Battery Management](lesson02-13.md)
 ## Memory Management
-#### 13. [Primitive/Non-Primitive Data](lesson02-13.md)
-#### 14. [Garbage Collection](lesson02-14.md)
+#### 14. [Primitive/Non-Primitive Data](lesson02-14.md)
+#### 15. [Garbage Collection](lesson02-15.md)
 ## Power Management
-#### 15. [Deep Sleep](lesson02-15.md)
+#### 16. [Deep Sleep](lesson02-16.md)

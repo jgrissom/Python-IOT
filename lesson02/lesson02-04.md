@@ -1,7 +1,7 @@
 ## Asynchronous Flicker method
 
 #### Materials
- - Assembled circuit from Lesson 02-03
+ - Assembled circuit from previous lesson
 
 #### Instructions
  - Modify the output module

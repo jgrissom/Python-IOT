@@ -1,7 +1,7 @@
 ## Momentary Switch
 
 #### Materials
- - Assembled circuit from Blink LED using definite repetition example
+ - Assembled circuit from previous lesson
  - 2.25" x 1 red wire (from previous)
  - 1.00" x 1 black wire
  - Momentary switch x 1

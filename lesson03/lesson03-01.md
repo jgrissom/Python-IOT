@@ -1,7 +1,7 @@
 ## Connect ESP32 to Wi-Fi
 
 #### Materials
- - Assembled circuit from Lesson 2
+ - Assembled circuit from previous lesson
 
 #### Code
 ```Python

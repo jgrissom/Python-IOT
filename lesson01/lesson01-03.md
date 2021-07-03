@@ -1,7 +1,7 @@
 ## MicroPython Driven LED Circuit
 
 #### Materials
- - Assembled circuit from MCU 3.3V Pin Driven LED Example
+ - Assembled circuit from previous lessone
  - 1.50" x 1 red wire
  - 1.00" x 1 black wire
  - Micro-USB to USB-A wire

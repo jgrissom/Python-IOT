@@ -1,7 +1,7 @@
 ## Asynchronous Blink method
 
 #### Materials
- - Assembled circuit from Lesson 02-04
+ - Assembled circuit from previous lesson
 
 #### Instructions
  - Modify the output module - create the "blink" method

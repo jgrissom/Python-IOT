@@ -15,7 +15,7 @@ btn_red = Button(18)
 btn_green = Button(5)
 btn_blue = Button(22)
 
-buzzer = PWM(Pin(33, Pin.OUT), duty=0)
+buzzer = PWM(Pin(25, Pin.OUT), duty=0)
 
 def buzz(duty, freq, duration):
     buzzer.duty(duty)
@@ -43,7 +43,7 @@ except KeyboardInterrupt:
 ```
 
 #### Instructions
- - Create the keyboard module
+ - Create the keyboard script
  - Using the REPL, type the following commands
 ```Python
 import keyboard

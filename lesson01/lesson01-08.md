@@ -1,7 +1,7 @@
 ## MicroPython Boot Scripts
 
 #### Materials
- - Assembled circuit from MicroPython Scripts example
+ - Assembled circuit from previous lesson
 
 #### Instructions
  - Using Thonny, create a new file

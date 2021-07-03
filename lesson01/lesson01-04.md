@@ -1,7 +1,7 @@
 ## Blink LED Using Indefinite Repetition
 
 #### Materials
- - Assembled circuit from MicroPython driven LED Example
+ - Assembled circuit from previous lesson
 
 #### Code
 ```Python

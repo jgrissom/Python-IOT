@@ -1,7 +1,7 @@
 ## Asynchronous Push Button
 
 #### Materials
- - Assembled circuit from Lesson 02-05
+ - Assembled circuit from previous lesson
 
 #### Instructions
  - Copy the code from github - https://github.com/tve/mpy-lib/blob/master/button/aswitch.py

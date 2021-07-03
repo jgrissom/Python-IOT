@@ -1,7 +1,7 @@
 ## TinyPICODotStar Class - toggle, flicker and blink methods
 
 #### Materials
- - Assembled circuit from Lesson 02-08
+ - Assembled circuit from previous lesson
 
 #### Code
 ```Python

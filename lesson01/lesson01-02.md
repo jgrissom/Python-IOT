@@ -1,7 +1,7 @@
 ## MCU Pin Driven LED Circuit
 
 #### Materials
- - Assembled circuit from Battery Driven LED Example
+ - Assembled circuit from previous lesson
  - tinyPICO board x 1
 
 [Circuit Drawing](lesson01-02.pdf)

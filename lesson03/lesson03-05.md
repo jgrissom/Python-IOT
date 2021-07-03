@@ -1,7 +1,7 @@
 ## Install MicroPython urequests
 
 #### Materials
- - Assembled circuit from Lesson 03-04
+ - Assembled circuit from previous lesson
 
 #### Instructions
  - Using the REPL, type the following commands:

@@ -1,7 +1,7 @@
 ## Flicker method
 
 #### Materials
- - Assembled circuit from Lesson 02-02
+ - Assembled circuit from previous lesson
 
 #### Instructions
  - Modify the output module - add the flicker method

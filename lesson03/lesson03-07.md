@@ -1,7 +1,7 @@
 ## Practice: MicroPython urequests
 
 #### Materials
- - Assembled circuit from Lesson 03-06
+ - Assembled circuit from previous lesson
 
 #### Instructions
  - Create a new python script requests_test
