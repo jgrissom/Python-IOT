@@ -1,32 +1,26 @@
-## LED Class - Toggle Method
+## Buzzer Class
 
 #### Materials
- - Assembled circuit from Button class example
+ - Assembled circuit from Lesson 02-01
 
 #### Code
 ```Python
-# GPIO.py
-...
-class Led(Pin):
-    def __init__(self, pin):
-        super().__init__(pin, Pin.OUT)
-    def toggle(self):
-        self.value(not self.value())
-```
-```Python
-# GPIO_test.py
+# output_test.py
 
-from GPIO import Button, Led
 from time import sleep
+from machine import Pin
+from output import Output as Buzzer
 
-btn_red = Button(18)
-led_red = Led(26)
+def main():
+    buzzer.on()
+    sleep(.2)
+    buzzer.off()
 
-while True:
-    if btn_red.pressed():
-        led_red.toggle()
-    sleep(.01)
+buzzer = Buzzer(Pin(25, Pin.OUT))
+
+if __name__ == "__main__":
+    main()
 ```
 #### Instructions
- - Add the LED class to the GPIO.py module
- - Modify the GPIO_test.py module to toggle the red led when the button is pressed
+ - Create the output_test script
+ - Run the output_test script

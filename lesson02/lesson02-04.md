@@ -1,23 +1,42 @@
-## Use a Lambda as the Timer Callback
+## Asynchronous Flicker method
 
 #### Materials
- - Assembled circuit from the ONE_SHOT timer example
+ - Assembled circuit from Lesson 02-03
 
-#### Code
-```Python
-# timer_test.py
-
-from machine import Timer
-from GPIO import Led
-
-led_red = Led(26)
-led_red.on()
-
-# initialize a software timer (-1)
-timer = Timer(-1)
-
-# inialize the timer to excecute the callback after 1.5 seconds
-timer.init(period=1500, mode=Timer.ONE_SHOT, callback=lambda t : led_red.off())
-```
 #### Instructions
- - Modify the timer_test module to use a lambda function
+ - Modify the output module
+   - Import asyncio module
+   - Modify the "flicker" method
+```Python
+# output.py
+
+...
+import uasyncio as asyncio
+...
+    async def async_flicker(self, delay):
+        self.pin.on()
+        await asyncio.sleep(delay)
+        self.pin.off()
+```
+ - Modify the output_test script
+```Python
+# output_test.py
+
+import uasyncio as asyncio
+from machine import Pin
+from output import Output
+
+async def main():
+    task1 = asyncio.create_task(led_red.async_flicker(2))
+    task2 = asyncio.create_task(led_green.async_flicker(1))
+    await task1
+    await task2
+
+led_red = Output(Pin(26, Pin.OUT))
+led_green = Output(Pin(27, Pin.OUT))
+
+if __name__ == "__main__":
+    # asyncio.run - top level entry point (should only be called once)
+    asyncio.run(main())
+```
+- Run the output_test script

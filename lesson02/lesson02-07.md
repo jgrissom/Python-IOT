@@ -1,61 +1,53 @@
-## Led Class - blink Method
+## Advanced Asynchronous Push Button
 
 #### Materials
- - Assembled circuit from the Led flicker example
+ - Assembled circuit from Lesson 02-06
+ - 2.50" x 1 yellow wires
+ - 2.25" x 2 blue wires
+ - 1.00" x 2 black wires
+ - Momentary switch x 1
+ - Blue button cap x 1
 
-#### Code
-```Python
-# GPIO.py
+[Circuit Drawing](lesson02-07.pdf)
 
-...
-    def off(self):
-        super().off()
-        try:
-            self.flicker_timer.deinit()
-        except:
-            pass
-        try:
-            self.blink_timer.deinit()
-        except:
-            pass
-    def blink(self, delay, end_count):
-        # set end_count = -1 for infinite blink
-        self.off()
-        self.blink_count = 0
-        self.end_count = end_count
-        self.blink_timer = Timer(-2)
-        # create software timer - runs periodically
-        self.blink_timer.init(period=delay, mode=Timer.PERIODIC, callback=self.__toggle_blink)
-    def __toggle_blink(self, timer):
-        if (self.blink_count < (self.end_count * 2)) or self.end_count == -1:
-            self.toggle()
-            self.blink_count += 1
-        else:
-            self.blink_timer.deinit()
-```
-```Python
-# GPIO_test.py
-
-from GPIO import Button, Led
-from time import sleep
-
-btn_red = Button(18)
-btn_green = Button(5)
-led_red = Led(26)
-led_green = Led(27)
-
-try:
-    while True:
-        if btn_red.pressed():
-            led_red.flicker(200)
-        if btn_green.pressed():
-            led_green.blink(500, 5)
-        sleep(.01)
-except KeyboardInterrupt:
-    led_red.off()
-    led_green.off()
-```
 #### Instructions
- - Add the blink and __toggle_blink methods to the Led class
- - Modify Led class off method
- - Modify the GPIO_test module to blink the green led 5 times when the green button is pressed
+ - Assemble the circuit
+ - Copy the code from github - https://github.com/tve/mpy-lib/blob/master/button/abutton.py
+ - Paste the code into the async_button module
+```Python
+# async_switch.py
+
+# TODO: paste code from github here and save as async_button.py
+```
+ - Create the advanced_asyc_button_test script
+```Python
+# advanced_asyc_button_test.py
+
+import uasyncio as asyncio
+from async_button import Pushbutton
+from machine import Pin
+
+btn_red = Pushbutton( Pin(18, Pin.IN, Pin.PULL_UP) )
+btn_green = Pushbutton( Pin(5, Pin.IN, Pin.PULL_UP) )
+btn_blue = Pushbutton( Pin(22, Pin.IN, Pin.PULL_UP) )
+
+def handle_event(msg):
+    print(msg)
+
+async def main():   
+    btn_red.press_func(handle_event, ('red-press',))
+    btn_red.release_func(handle_event, ('red-release',))
+    btn_green.long_func(handle_event, ('green-long',))
+    btn_blue.double_func(handle_event, ('blue-double',))
+
+    # main program loop
+    while True:
+        await asyncio.sleep(.01)
+
+if __name__ == '__main__':
+    try:
+        asyncio.run(main())
+    finally:
+        print("goodbye")
+```
+- Run the advanced_asyc_button_test script (Ctrl + c to quit)

@@ -2,7 +2,7 @@
 This example was adapted from [https://RandomNerdTutorials.com](https://RandomNerdTutorials.com)
 
 #### Materials
- - Assembled circuit from the Garbage Collection example
+ - Assembled circuit from Lesson 02-14
  - 3.50" x 1 black wire
  - 2.00" x 1 black wire
  - Small momemtary switch x 1
@@ -34,6 +34,6 @@ machine.deepsleep()
 
 #### Instructions
  - Assemble the circuit
- - Create the deep_sleep_test module
- - Using the REPL, import the deep_sleep_test module
+ - Create the deep_sleep_test script
+ - Run the deep_sleep_test script
  - When the microcontroller goes to deep sleep, you can wake it by pressing the button attached to pin 33

@@ -1,17 +1,16 @@
 ## TinyPICODotStar Class - turn RGB led on/off
 
 #### Materials
- - Assembled circuit from the Led blink example
+ - Assembled circuit from Lesson 02-07
 
 #### Code
 ```Python
-# GPIO.py
+# internal.py
 
-...
-from machine import SoftSPI
 import tinypico as TinyPICO
 from micropython_dotstar import DotStar
-...
+from machine import Pin, SoftSPI
+
 class TinyPICODotStar(DotStar):
     def __init__(self):
         # Configure SPI for controlling the DotStar
@@ -30,13 +29,10 @@ class TinyPICODotStar(DotStar):
         TinyPICO.set_dotstar_power(False)
 ```
 #### Instructions
- - Import helper modules into GPIO module
- - Add the TinyPICODotStar class to the GPIO module
- - Add the constructor
- - Add the on, off and kill methods
+ - Create the internal module
  - Using the REPL, type the following commands:
 ```Python
-from GPIO import TinyPICODotStar
+from internal import TinyPICODotStar
 dotstar = TinyPICODotStar()
 dotstar.on((255,0,0))
 dotstar.off()

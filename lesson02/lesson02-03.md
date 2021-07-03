@@ -1,31 +1,56 @@
-## Create a ONE_SHOT Timer
+## Flicker method
 
 #### Materials
- - Assembled circuit from LED class - toggle method example
+ - Assembled circuit from Lesson 02-02
 
-#### Code
-```Python
-# timer_test.py
-
-from machine import Timer
-from GPIO import Led
-
-led_red = Led(26)
-led_red.on()
-
-# initialize a software timer (-1)
-timer = Timer(-1)
-# define a function to be called as the timer callback
-def turn_off_led(timer):
-    led_red.off()
-# inialize the timer to excecute the callback after 1.5 seconds
-timer.init(period=1500, mode=Timer.ONE_SHOT, callback=turn_off_led)
-```
-```Python
-# main.py
-
-import timer_test
-```
 #### Instructions
- - Create the timer_test module and save it to the microcontroller
- - Modify the main module to import the timer_test module
+ - Modify the output module - add the flicker method
+```Python
+# output.py
+
+...
+    def flicker(self, delay):
+        from time import sleep
+        self.pin.on()
+        sleep(delay)
+        self.pin.off()
+```
+ - Modify the output_test script
+```Python
+# output_test.py
+
+from time import sleep
+from machine import Pin
+from output import Output
+
+def main():
+    led_red.flicker(2)
+
+led_red = Output(Pin(26, Pin.OUT))
+
+if __name__ == "__main__":
+    main()
+```
+ - Run the output_test script
+ - This works perfectly fine for 1 led/buzzer
+ - What if we want to flicker 2 leds/buzzers at the same time?
+ - Modify the output_test script
+```Python
+# output_test.py
+
+from time import sleep
+from machine import Pin
+from output import Output
+
+def main():
+    led_red.flicker(2)
+    led_green.flicker(1.5)
+    
+
+led_red = Output(Pin(26, Pin.OUT))
+led_green = Output(Pin(27, Pin.OUT))
+
+if __name__ == "__main__":
+    main()
+```
+- Run the output_test script

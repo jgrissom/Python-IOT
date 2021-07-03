@@ -14,7 +14,7 @@ led.blink(7)
 ```
  - Save the file to the MicroController as main.py
  - Press Ctrl + D (to soft reboot the MicroController)
- - Modify the main.py:
+ - Modify the program:
 ```Python
 # main.py
 

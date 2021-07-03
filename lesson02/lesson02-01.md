@@ -1,49 +1,40 @@
-## Button Class
+## Led Class
 
 #### Materials
  - Assembled circuit from Lesson 1
+ - Green led x 1
+ - 2.00" x 1 green wire
+ - 1.00" x 1 green wire
+ - 330 Ohm resistor x 1
+
+[Circuit Drawing](lesson02-01.pdf)
 
 #### Code
 ```Python
-# GPIO.py
+# output.py
 
-from machine import Pin
-
-# Button class is derived from the Pin class
-class Button(Pin):
+class Output():
     def __init__(self, pin):
-        # call super class constructor
-        super().__init__(pin, Pin.IN, Pin.PULL_UP)
-        # save initial state of Button
-        self.state = self.value()
-    def pressed(self):
-        # switch 0 and 1 to implement released/pressed
-        # or if pin is PULLED_DOWN
-        if self.state == 0 and self.value() == 1:
-            self.state = self.value()
-            return True
-        self.state = self.value()
-        return False
+        self.pin = pin
+    def on(self):
+        self.pin.on()
+    def off(self):
+        self.pin.off()
+    def toggle(self):
+        self.pin.value(not self.pin.value())
 ```
-```Python
-# GPIO_test.py
 
-from GPIO import Button
-from time import sleep
-
-btn_red = Button(18)
-
-while True:
-    if btn_red.pressed():
-        print('red pressed')
-    sleep(.01)
-```
-```Python
-# main.py
-
-import GPIO_test
-```
 #### Instructions
- - Create python module GPIO.py and save to the microcontroller
- - Create python module GPIO_test.py and save to the microcontroller
- - Modify main.py - import GPIO_test module
+ - Assemble the circuit
+ - Create python module output and save to the microcontroller
+ - Using the REPL, type the following commands:
+```Python
+from machine import Pin
+from output import Output as Led
+led_red = Led(Pin(26, Pin.OUT))
+led_green = Led(Pin(27, Pin.OUT))
+led_red.on()
+led_green.toggle()
+led_green.toggle()
+led_red.off()
+```

@@ -1,7 +1,7 @@
 ## Battery Management
 
 #### Materials
- - Assembled circuit from the Battery voltage & charge status example
+ - Assembled circuit from Lesson 02-11
 
 #### Code
 ```Python
@@ -57,5 +57,5 @@ except KeyboardInterrupt:
 ```
 
 #### Instructions
- - Create the battery_test module
- - Import the battery_test module into the main module
+ - Create the battery_test script
+ - Run the battery_test script

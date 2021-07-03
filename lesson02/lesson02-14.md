@@ -1,7 +1,7 @@
 ## Garbage Collection
 
 #### Materials
- - Assembled circuit from the Primitive/Non-Primitive Data example
+ - Assembled circuit from Lesson 02-13
 
 #### Instructions
  - In Thonny, click View - Variables

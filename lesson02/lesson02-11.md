@@ -1,7 +1,7 @@
 ## Battery Voltage & Charge Status
 
 #### Materials
- - Assembled circuit from the TinyPICODotStar practice example
+ - Assembled circuit from Lesson 02-10
 
 #### Instructions
  - Using the REPL, type the following commands:

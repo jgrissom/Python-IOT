@@ -1,7 +1,7 @@
 ## Primitive/Non-Primitive Data
 
 #### Materials
- - Assembled circuit from the Battery management example
+ - Assembled circuit from Lesson 02-12
 
 #### Instructions
  - In Thonny, click View - Variables

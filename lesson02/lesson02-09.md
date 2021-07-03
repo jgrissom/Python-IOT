@@ -1,61 +1,60 @@
 ## TinyPICODotStar Class - toggle, flicker and blink methods
 
 #### Materials
- - Assembled circuit from the RGB Led on/off example
+ - Assembled circuit from Lesson 02-08
 
 #### Code
 ```Python
-# GPIO.py
+# internal.py
 
 ...
-    def off(self):
-        self[0] = self.BLACK
-        try:
-            self.flicker_timer.deinit()
-        except:
-            pass
-        try:
-            self.blink_timer.deinit()
-        except:
-            pass
     def toggle(self, color):
-        if self[0] == self.BLACK:
-            self[0] = color
-        else:
+        # if dotstar is already set to color, set dotstar to black
+        if self[0][0] == color[0] and self[0][1] == color[1] and self[0][2] == color[2]:
             self[0] = self.BLACK
-    def flicker(self, color, delay):
-        self.on(color)
-        # create software timer - runs once
-        self.flicker_timer = Timer(-3)
-        self.flicker_timer.init(period=delay, mode=Timer.ONE_SHOT, callback=lambda t : self.off())
-    def blink(self, color, delay, end_count):
-        # set end_count = -1 for infinite blink
-        self.blink_count = 0
-        self.end_count = end_count
-        self.blink_timer = Timer(-4)
-        # create software timer - runs periodically
-        self.blink_timer.init(period=delay, mode=Timer.PERIODIC, callback=lambda t : self.__toggle_blink(color))
-    def __toggle_blink(self, color):
-        if (self.blink_count < (self.end_count * 2)) or self.end_count == -1:
-            self.toggle(color)
-            self.blink_count = self.blink_count + 1
         else:
-            self.blink_timer.deinit()
+            self[0] = color      
+    async def async_flicker(self, color, delay):
+        self.on(color)
+        await asyncio.sleep(delay)
+        self.off()
+    async def async_blink(self, color, delay, end_count=0):
+        count = 0
+        while True:
+            if end_count > 0:
+                count += 1
+                if count > end_count:
+                    break
+            self.on(color)
+            await asyncio.sleep(delay)
+            self.off()
+            await asyncio.sleep(delay)
+```
+```Python
+# dotstar_test.py
+
+import uasyncio as asyncio
+from machine import Pin
+from internal import TinyPICODotStar
+
+async def main():
+    await asyncio.create_task(dotstar.async_flicker(RED, 1))
+    await asyncio.create_task(dotstar.async_blink(GREEN, .2, 5))
+
+dotstar = TinyPICODotStar()
+RED = (255, 0, 0, .5)
+GREEN = (0, 255, 0, .5)
+
+if __name__ == "__main__":
+    # asyncio.run - top level entry point (should only be called once)
+    try:
+        asyncio.run(main())
+    finally:
+        dotstar.kill()
 ```
 #### Instructions
- - Modify the off method
+ - Modify the internal module
  - Add the toggle, flicker and blink methods
- - Reboot the microcontroller
- - Using the REPL, type the following commands:
-```Python
-import GPIO
-dotstar = GPIO.TinyPICODotStar()
-# (R, G, B, brightness)
-RED = (255, 0, 0, .5)
-dotstar.toggle(RED)
-dotstar.toggle(RED)
-dotstar.flicker(RED, 200)
-dotstar.blink(RED, 200, 5)
-dotstar.off()
-dotstar.kill()
-```
+ - Create the dotstar_test script
+ - Run the dotstar_test script
+
