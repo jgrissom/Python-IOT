@@ -1,7 +1,7 @@
 ## PWM - Led
 
 #### Materials
- - Assembled circuit from Lesson 3
+ - Assembled circuit from previous lesson
 
 #### Instructions
  - Using the REPL, type the following commands:

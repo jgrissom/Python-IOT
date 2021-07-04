@@ -1,7 +1,7 @@
 ## PWM - Buzzer
 
 #### Materials
- - Assembled circuit from PWM Led example
+ - Assembled circuit from previous lesson
 
 #### Instructions
  - Using the REPL, type the following commands - if needed, type buzzer.deinit()

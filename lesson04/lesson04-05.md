@@ -1,7 +1,7 @@
 ## PWM - RTTTL
 
 #### Materials
- - Assembled circuit from PWM Buzzer example
+ - Assembled circuit from previous lesson
 
 #### Credit
  - This example adpated for ESP32 from https://github.com/dhylands/upy-rtttl

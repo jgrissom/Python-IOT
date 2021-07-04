@@ -1,7 +1,7 @@
 ## PWM - Buzzer Keyboard
 
 #### Materials
- - Assembled circuit from PWM Buzzer example
+ - Assembled circuit from previous lesson
 
 #### Code
 ```Python
@@ -44,10 +44,8 @@ except KeyboardInterrupt:
 
 #### Instructions
  - Create the keyboard script
- - Using the REPL, type the following commands
-```Python
-import keyboard
-```
+ - Run the keyboard script
+ 
 **Mary Had a Little Lamb**:
  
 *blue, green, red, green, blue, blue, blue*

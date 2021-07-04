@@ -1,9 +1,9 @@
 ## PWM - Buzzer Play Songs
 
 #### Materials
- - Assembled circuit from PWM Buzzer example
+ - Assembled circuit from previous lesson
 
-[Note Frequency Chart](lesson03-06.pdf)
+[Note Frequency Chart](NoteFrequencyChart.pdf)
 #### Code
 ```Python
 # simple_songs.py
@@ -11,7 +11,7 @@
 from machine import Pin, PWM
 from time import sleep
 
-buzzer = PWM(Pin(33, Pin.OUT), duty=0)
+buzzer = PWM(Pin(25, Pin.OUT), duty=0)
 
 # use lists to store note frequencies for octaves 0-8
 c = [ 16, 33, 65, 131, 262, 523, 1047, 2093, 4186 ] 
@@ -49,6 +49,7 @@ def play(track):
 ```
 #### Instructions
  - Create the songs module
+ - NOTE: this code is NOT asynchronous
  - From the REPL, type the following commands:
 ```Python
 import simple_songs

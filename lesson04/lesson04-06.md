@@ -1,84 +1,97 @@
-## PWMBuzzer - GPIO
+## PWM - RTTTL Async
 
 #### Materials
- - Assembled circuit from PWM Buzzer example
+ - Assembled circuit from previous lesson
 
-#### Code
 ```Python
-# GPIO.py
+# async_rtttl_player.py
 
-from machine import PWM
-...
-class PWMBuzzer(PWM):
-    def __init__(self, p):
-        super().__init__(Pin(p, Pin.OUT), 550, 0)
-    def flicker(self, duty, freq, delay):
-        self.duty(duty)
-        self.freq(freq)
-        self.flicker_timer = Timer(-6)
-        self.flicker_timer.init(period=delay, mode=Timer.ONE_SHOT, callback=lambda t : self.duty(0))
+from rtttl import RTTTL
+import songs
+import uasyncio as asyncio
+
+async def play_tone_async(freq, msec, pwm, duty):
+    print('freq = {:6.1f} msec = {:6.1f}'.format(freq, msec))
+    if freq > 0:
+        pwm.freq(int(freq))         # Set frequency
+        pwm.duty(duty)              # Set duty
+    await asyncio.sleep(msec*0.001) # Play for a number of msec    
+    pwm.duty(0)                     # Stop playing
+    await asyncio.sleep_ms(50)      # Delay 50 ms between notes
+
+
+async def play(song, pwm, duty):
+    tune = RTTTL(songs.find(song))
+    try:
+        for freq, msec in tune.notes():
+            await play_tone_async(freq, msec, pwm, duty)
+    finally:
+        pwm.duty(0)
 ```
 ```Python
-# main.py
+# async_rtttl_player_test.py
 
-import pymon
-```
-```Python
-# pymon.py
+import uasyncio as asyncio
+from async_switch import Switch
+from async_output import Led
+from machine import Pin, PWM
+from internal import TinyPICODotStar
+import async_rtttl_player
 
-from GPIO import Button, Led, TinyPICODotStar, PWMBuzzer
-from time import sleep
+led_red = Led( Pin(26, Pin.OUT) )
+led_green = Led( Pin(27, Pin.OUT) )
 
-COLOR_RED = (255, 0, 0, .5)
-COLOR_GREEN = (0, 255, 0, .5)
-COLOR_BLUE = (0, 0, 255, .5)
-COLOR_YELLOW = (255, 255, 0, .5)
-colors = [ COLOR_RED, COLOR_GREEN, COLOR_BLUE, COLOR_YELLOW ]
-
-NOTE_RED = 440     # a  (4th octave)
-NOTE_GREEN = 165   # e  (3rd octave)
-NOTE_BLUE = 330    # e  (4th octave)
-NOTE_YELLOW = 277  # c# (4th octave)
-notes = [ NOTE_RED, NOTE_GREEN, NOTE_BLUE, NOTE_YELLOW ]
-
-BTN_RED_PIN = 18
-BTN_GREEN_PIN = 5
-BTN_BLUE_PIN = 22
-BTN_YELLOW_PIN = 21
-btns = [ Button(BTN_RED_PIN), Button(BTN_GREEN_PIN), Button(BTN_BLUE_PIN), Button(BTN_YELLOW_PIN) ]
-
-LED_RED_PIN = 25
-LED_GREEN_PIN = 26
-LED_BLUE_PIN = 27
-LED_YELLOW_PIN = 15
-leds = [ Led(LED_RED_PIN), Led(LED_GREEN_PIN), Led(LED_BLUE_PIN), Led(LED_YELLOW_PIN) ]
-# turn off all leds by default
-for i in range(len(leds)):
-    leds[i].off()
+btn_red = Switch( Pin(18, Pin.IN, Pin.PULL_UP) )
+btn_green = Switch( Pin(5, Pin.IN, Pin.PULL_UP) )
+btn_blue = Switch( Pin(22, Pin.IN, Pin.PULL_UP) )
 
 dotstar = TinyPICODotStar()
-dotstar.off()
-buzzer = PWMBuzzer(33)
-buzzer_duty = 50
-restart_button = Button(32)
+pwm = PWM(Pin(25, Pin.OUT), 10, 0)
 
-try:
+dotstar_tasks = []
+RED = (255, 0, 0, .5)
+GREEN = (0, 255, 0, .5)
+
+def cancel_tasks(tasks):
+    print('cancel ' + str(len(tasks)) + ' task(s)')
+    for task in tasks:
+        task.cancel()
+    tasks.clear()
+def play_song(song):
+    led_red.off()
+    led_green.on()
+    dotstar.on(GREEN)
+    cancel_tasks(dotstar_tasks)
+    dotstar_tasks.append(asyncio.create_task(async_rtttl_player.play(song, pwm, 5)))
+def stop_song():
+    led_red.on()
+    led_green.off()
+    dotstar.on(RED)
+    cancel_tasks(dotstar_tasks)
+
+async def main():
+    led_red.on()
+    dotstar.on(RED)
+    btn_red.close_func(play_song, ('StarWars',))
+    btn_green.close_func(play_song, ('Imperial',))
+    btn_blue.close_func(stop_song)
+    
     while True:
-        for i in range(len(btns)):
-            if btns[i].pressed():
-                dotstar.flicker(colors[i], 200)
-                leds[i].flicker(200);
-                buzzer.flicker(buzzer_duty, notes[i], 200)
-            elif restart_button.pressed():
-                print('restart game')
-            
-        sleep(.01)
-except KeyboardInterrupt:
-    print('goodbye')
-    buzzer.deinit()
+        await asyncio.sleep(.01)
+
+if __name__ == '__main__':
+    try:
+        # asyncio.run - top level entry point (should only be called once)
+        asyncio.run(main())
+    finally:
+        print("goodbye")
+        led_green.off()
+        led_red.off()
+        dotstar.kill()
+        cancel_tasks(dotstar_tasks)
+        pwm.deinit()
 ```
 #### Instructions
- - Modify thge GPIO module - add the PWMBuzzer class
- - Modify the main module - import the pymon module
- - Create the pymon module
-
+ - Create the async_rtttl_player module
+ - Create the async_rtttl_player_test script
+ - Run the async_rtttl_player_test script
