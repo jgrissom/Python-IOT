@@ -6,8 +6,6 @@
 ```Python
 # async_rtttl_player.py
 
-from rtttl import RTTTL
-import songs
 import uasyncio as asyncio
 
 async def play_tone_async(freq, msec, pwm, duty):
@@ -21,9 +19,8 @@ async def play_tone_async(freq, msec, pwm, duty):
 
 
 async def play(song, pwm, duty):
-    tune = RTTTL(songs.find(song))
     try:
-        for freq, msec in tune.notes():
+        for freq, msec in song.notes():
             await play_tone_async(freq, msec, pwm, duty)
     finally:
         pwm.duty(0)
@@ -37,6 +34,8 @@ from async_output import Led
 from machine import Pin, PWM
 from internal import TinyPICODotStar
 import async_rtttl_player
+import songs
+from rtttl import RTTTL
 
 led_red = Led( Pin(26, Pin.OUT) )
 led_green = Led( Pin(27, Pin.OUT) )
@@ -62,7 +61,8 @@ def play_song(song):
     led_green.on()
     dotstar.on(GREEN)
     cancel_tasks(dotstar_tasks)
-    dotstar_tasks.append(asyncio.create_task(async_rtttl_player.play(song, pwm, 5)))
+    tune = RTTTL(songs.find(song))
+    dotstar_tasks.append(asyncio.create_task(async_rtttl_player.play(tune, pwm, 5)))
 def stop_song():
     led_red.on()
     led_green.off()
@@ -73,7 +73,7 @@ async def main():
     led_red.on()
     dotstar.on(RED)
     btn_red.close_func(play_song, ('StarWars',))
-    btn_green.close_func(play_song, ('Imperial',))
+    btn_green.close_func(play_song, ('Imperial', ))
     btn_blue.close_func(stop_song)
     
     while True:
@@ -90,6 +90,8 @@ if __name__ == '__main__':
         dotstar.kill()
         cancel_tasks(dotstar_tasks)
         pwm.deinit()
+
+
 ```
 #### Instructions
  - Create the async_rtttl_player module
