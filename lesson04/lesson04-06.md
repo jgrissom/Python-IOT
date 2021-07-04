@@ -89,9 +89,8 @@ if __name__ == '__main__':
         led_red.off()
         dotstar.kill()
         cancel_tasks(dotstar_tasks)
+        pwm.duty(0)
         pwm.deinit()
-
-
 ```
 #### Instructions
  - Create the async_rtttl_player module
