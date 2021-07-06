@@ -6,7 +6,7 @@
 #### Instructions
  - Modify the output module
    - Import asyncio module
-   - Modify the "flicker" method
+   - Create the asynchronous flicker method
 ```Python
 # output.py
 
