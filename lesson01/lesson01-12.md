@@ -10,9 +10,7 @@
 from machine import Pin
 from time import sleep
 
-btn_green = Pin(5, Pin.IN, Pin.PULL_UP)
-
-try:
+def main():
     while True:
         first = btn_green.value()
         sleep(0.01)
@@ -21,10 +19,15 @@ try:
             print('Button pressed!')
         elif not first and second:
             print('Button released!')
-except KeyboardInterrupt:
-    print('goodbye')
+
+if __name__ == '__main__':
+    try:
+        btn_green = Pin(5, Pin.IN, Pin.PULL_UP)
+        main()
+    finally:
+        print('goodbye')
 ```
 
 #### Instructions
  - Create python script button.py and save to the Microcontroller
- - Import the module into main.py and test
+ - Test the script button.py

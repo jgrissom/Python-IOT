@@ -12,10 +12,6 @@ from output import Output
 import uasyncio as asyncio
 from machine import Pin
 
-led_green = Output(Pin(27, Pin.OUT))
-led_yellow = Output(Pin(14, Pin.OUT))
-led_red = Output(Pin(26, Pin.OUT))
-
 def leds_off():
     led_red.off()
     led_yellow.off()
@@ -49,9 +45,6 @@ async def check_battery_status():
             led_on(led_red, charge_status)
         await asyncio.sleep(3)
 
-led_tasks = []
-system_tasks = []
-
 async def main():
     system_tasks.append(asyncio.create_task(check_battery_status()))
     
@@ -62,16 +55,18 @@ async def main():
 
 if __name__ == '__main__':
     try:
+        led_green = Output(Pin(27, Pin.OUT))
+        led_yellow = Output(Pin(14, Pin.OUT))
+        led_red = Output(Pin(26, Pin.OUT))
+        led_tasks = []
+        system_tasks = []
         asyncio.run(main())
     finally:
         cancel_tasks(system_tasks)
         cancel_tasks(led_tasks)
         leds_off()
         print('goodbye')
-
-
 ```
-
 #### Instructions
  - Create the battery_test script
  - Run the battery_test script

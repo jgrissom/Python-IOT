@@ -37,15 +37,17 @@ import uasyncio as asyncio
 from machine import Pin
 from internal import TinyPICODotStar
 
+RED = (255, 0, 0, .5)
+GREEN = (0, 255, 0, .5)
+
+
 async def main():
     await asyncio.create_task(dotstar.async_flicker(RED, 1))
     await asyncio.create_task(dotstar.async_blink(GREEN, .2, 5))
 
-dotstar = TinyPICODotStar()
-RED = (255, 0, 0, .5)
-GREEN = (0, 255, 0, .5)
-
 if __name__ == "__main__":
+    dotstar = TinyPICODotStar()
+    dotstar.off()
     # asyncio.run - top level entry point (should only be called once)
     try:
         asyncio.run(main())
@@ -57,4 +59,3 @@ if __name__ == "__main__":
  - Add the toggle, flicker and blink methods
  - Create the dotstar_test script
  - Run the dotstar_test script
-

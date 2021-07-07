@@ -19,8 +19,6 @@ import uasyncio as asyncio
 from async_switch import Switch
 from machine import Pin
 
-btn_red = Switch( Pin(18, Pin.IN, Pin.PULL_UP) )
-
 def press():
     print('pressed')
 
@@ -31,14 +29,16 @@ async def main():
     while True:
         await asyncio.sleep(.01)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    # asyncio.run - top level entry point (should only be called once)
     try:
+        btn_red = Switch( Pin(18, Pin.IN, Pin.PULL_UP) )
         asyncio.run(main())
     finally:
-        print("goodbye")
+        print('goodbye')
 ```
 - Run the simple_async_button_test script (Ctrl + c to quit)
-- Modify the simple_async_button_test script
+- Modify the simple_async_button_test script - **comments are placed above the 2 changes**
 ```Python
 # simple_async_button_test.py
 
@@ -46,25 +46,27 @@ import uasyncio as asyncio
 from async_switch import Switch
 from machine import Pin
 
-btn_red = Switch( Pin(18, Pin.IN, Pin.PULL_UP) )
-
 def press():
     print('pressed')
+# 1. Add release method
 def release():
     print('released')
 
 async def main():   
     btn_red.close_func(press)
+    # 2. Attach event listener to switch open_func
     btn_red.open_func(release)
 
     # main program loop
     while True:
         await asyncio.sleep(.01)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    # asyncio.run - top level entry point (should only be called once)
     try:
+        btn_red = Switch( Pin(18, Pin.IN, Pin.PULL_UP) )
         asyncio.run(main())
     finally:
-        print("goodbye")
+        print('goodbye')
 ```
 - Run the simple_async_button_test script (Ctrl + c to quit)

@@ -1,4 +1,4 @@
-## Buzzer Class
+## Buzzer
 
 #### Materials
  - Assembled circuit from previous lesson
@@ -16,10 +16,13 @@ def main():
     sleep(.2)
     buzzer.off()
 
-buzzer = Buzzer(Pin(25, Pin.OUT))
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    try:
+        buzzer = Buzzer(Pin(25, Pin.OUT))
+        main()
+    finally:
+        print('goodbye')
+        buzzer.off()
 ```
 #### Instructions
  - Create the output_test script

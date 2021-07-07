@@ -32,11 +32,14 @@ async def main():
     await task1
     await task2
 
-led_red = Output(Pin(26, Pin.OUT))
-led_green = Output(Pin(27, Pin.OUT))
-
-if __name__ == "__main__":
-    # asyncio.run - top level entry point (should only be called once)
-    asyncio.run(main())
+if __name__ == '__main__':
+    try:
+        led_red = Output(Pin(26, Pin.OUT))
+        led_green = Output(Pin(27, Pin.OUT))
+        asyncio.run(main())
+    finally:
+        print('goodbye')
+        led_red.off()
+        led_green.off()
 ```
 - Run the output_test script

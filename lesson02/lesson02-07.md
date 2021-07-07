@@ -27,10 +27,6 @@ import uasyncio as asyncio
 from async_button import Pushbutton
 from machine import Pin
 
-btn_red = Pushbutton( Pin(18, Pin.IN, Pin.PULL_UP) )
-btn_green = Pushbutton( Pin(5, Pin.IN, Pin.PULL_UP) )
-btn_blue = Pushbutton( Pin(22, Pin.IN, Pin.PULL_UP) )
-
 def handle_event(msg):
     print(msg)
 
@@ -46,6 +42,9 @@ async def main():
 
 if __name__ == '__main__':
     try:
+        btn_red = Pushbutton( Pin(18, Pin.IN, Pin.PULL_UP) )
+        btn_green = Pushbutton( Pin(5, Pin.IN, Pin.PULL_UP) )
+        btn_blue = Pushbutton( Pin(22, Pin.IN, Pin.PULL_UP) )
         asyncio.run(main())
     finally:
         print("goodbye")
