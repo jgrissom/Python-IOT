@@ -30,24 +30,13 @@ async def play(song, pwm, duty):
 
 import uasyncio as asyncio
 from async_switch import Switch
-from async_output import Led
+from output import Output as Led
 from machine import Pin, PWM
 from internal import TinyPICODotStar
 import async_rtttl_player
 import songs
 from rtttl import RTTTL
 
-led_red = Led( Pin(26, Pin.OUT) )
-led_green = Led( Pin(27, Pin.OUT) )
-
-btn_red = Switch( Pin(18, Pin.IN, Pin.PULL_UP) )
-btn_green = Switch( Pin(5, Pin.IN, Pin.PULL_UP) )
-btn_blue = Switch( Pin(22, Pin.IN, Pin.PULL_UP) )
-
-dotstar = TinyPICODotStar()
-pwm = PWM(Pin(25, Pin.OUT), 10, 0)
-
-dotstar_tasks = []
 RED = (255, 0, 0, .5)
 GREEN = (0, 255, 0, .5)
 
@@ -81,14 +70,25 @@ async def main():
 
 if __name__ == '__main__':
     try:
+        led_red = Led( Pin(26, Pin.OUT) )
+        led_green = Led( Pin(27, Pin.OUT) )
+
+        btn_red = Switch( Pin(18, Pin.IN, Pin.PULL_UP) )
+        btn_green = Switch( Pin(5, Pin.IN, Pin.PULL_UP) )
+        btn_blue = Switch( Pin(22, Pin.IN, Pin.PULL_UP) )
+
+        dotstar = TinyPICODotStar()
+        pwm = PWM(Pin(25, Pin.OUT), 10, 0)
+
+        dotstar_tasks = []
         # asyncio.run - top level entry point (should only be called once)
         asyncio.run(main())
     finally:
         print("goodbye")
         led_green.off()
         led_red.off()
-        dotstar.kill()
         cancel_tasks(dotstar_tasks)
+        dotstar.kill()
         pwm.duty(0)
         pwm.deinit()
 ```

@@ -7,39 +7,51 @@
 ```Python
 # keyboard.py
 
-from GPIO import Button
-from time import sleep
+import uasyncio as asyncio
+from async_switch import Switch
 from machine import Pin, PWM
 
-btn_red = Button(18)
-btn_green = Button(5)
-btn_blue = Button(22)
-
-buzzer = PWM(Pin(25, Pin.OUT), duty=0)
-
-def buzz(duty, freq, duration):
+async def buzz(duty, freq, duration):
+    print(freq)
     buzzer.duty(duty)
     buzzer.freq(freq)
-    sleep(duration)
+    await asyncio.sleep(duration)
     buzzer.duty(0)
+
+def press(freq):
+    cancel_tasks()
+    tasks.append(asyncio.create_task(buzz(10, freq, .2)))
     
-try:
+def cancel_tasks():
+    print('cancel ' + str(len(tasks)) + ' task(s)')
+    for task in tasks:
+        task.cancel()
+    tasks.clear()
+
+async def main():
+    # C (octave 4)
+    btn_red.close_func(press, (262,))
+    # D (octave 4)
+    btn_green.close_func(press, (294,))
+    # E (octave 4)
+    btn_blue.close_func(press, (330,))
+    # main program loop
     while True:
-        if (btn_red.pressed()):
-            # C (octave 4)
-            buzz(10, 262, .2)
-        elif (btn_green.pressed()):
-            # D (octave 4)
-            buzz(10, 294, .2)
-        elif (btn_blue.pressed()):
-            # E (octave 4)
-            buzz(10, 330, .2)
-        sleep(.01)
-            
-except KeyboardInterrupt:
-    print('goodbye')
-    buzzer.freq(0)
-    buzzer.duty(0)
+        await asyncio.sleep(.01)
+
+if __name__ == "__main__":
+    try:
+        btn_red = Switch( Pin(18, Pin.IN, Pin.PULL_UP) )
+        btn_green = Switch( Pin(5, Pin.IN, Pin.PULL_UP) )
+        btn_blue = Switch( Pin(22, Pin.IN, Pin.PULL_UP) )
+
+        buzzer = PWM(Pin(25, Pin.OUT), duty=0)
+        tasks = []
+        asyncio.run(main())
+    finally:
+        print("goodbye")
+        cancel_tasks()
+        buzzer.deinit()
 ```
 
 #### Instructions

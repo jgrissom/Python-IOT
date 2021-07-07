@@ -36,7 +36,7 @@ async def connect(ssid, password, timeout=5000):
 
 import uasyncio as asyncio
 import async_wifi
-from async_output import Led
+from output import Output as Led
 from machine import Pin
 
 def cancel_tasks():
@@ -46,16 +46,15 @@ def cancel_tasks():
     tasks.clear()
 
 async def main():
-    tasks.append(asyncio.create_task(led.blink(200)))
+    tasks.append(asyncio.create_task(led.async_blink(.2)))
     print(await async_wifi.connect('ssid', 'password', 5000))
     while True:
         await asyncio.sleep(.01)
 
-led = Led(Pin(26, Pin.OUT))
-tasks = []
-
 if __name__ == '__main__':
     try:
+        led = Led(Pin(26, Pin.OUT))
+        tasks = []
         asyncio.run(main())
     finally:
         led.off()

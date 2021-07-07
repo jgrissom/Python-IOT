@@ -43,17 +43,7 @@ def play(track):
             else:
                 sleep(.3)
             buzzer.duty(0)
-    except KeyboardInterrupt:
-        buzzer.freq(0)
+    finally:
         buzzer.duty(0)
-```
-#### Instructions
- - Create the songs module
- - NOTE: this code is NOT asynchronous
- - From the REPL, type the following commands:
-```Python
-import simple_songs
-simple_songs.play("little_lamb")
-simple_songs.play("twinkle_twinkle")
 ```
 - On your own, add DO-RE-MI-FA-SO-LA-TI-DO to the playlist and test it using the REPL
