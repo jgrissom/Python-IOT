@@ -2,8 +2,8 @@
 
 #### Materials
  - Assembled circuit from previous lesson
- - 2.25" x 2 blue wires
- - 1.00" x 2 black wires
+ - 2.25" x 1 blue wires
+ - 1.00" x 1 black wires
  - Momentary switch x 1
  - Blue button cap x 1
 
