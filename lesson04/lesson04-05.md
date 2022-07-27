@@ -185,7 +185,7 @@ import songs
 from machine import Pin, PWM
 from time import sleep
 
-pwm = PWM(Pin(33, Pin.OUT), freq=550, duty=0)
+pwm = PWM(Pin(25, Pin.OUT), freq=550, duty=0)
 
 def play_tone(freq, msec):
     print('freq = {:6.1f} msec = {:6.1f}'.format(freq, msec))

@@ -48,13 +48,13 @@ np.clear()
 ```Python
 import uasyncio as asyncio
 ...
-async def async_flicker(self, color, delay):
-    self.on(color)
-    await asyncio.sleep(delay)
-    self.clear()
+    async def async_flicker(self, color, delay):
+        self.on(color)
+        await asyncio.sleep(delay)
+        self.clear()
 
 async def main():
-    np = NP(Pin(26), 24)
+    np = NP(Pin(4), 24)
 
     await np.async_flicker((0,0,255), .5)
 
@@ -74,14 +74,14 @@ if __name__ == '__main__':
 #### Code
 ```Python
 ...
-async def async_cycle(self, color, num=4):
-    for i in range(num * self.n):
-        for j in range(self.n):
-            self.np[j] = (0,0,0)
-        self.np[i % self.n] = color
-        self.np.write()
-        await asyncio.sleep(.02)
-    self.clear()
+    async def async_cycle(self, color, num=4):
+        for i in range(num * self.n):
+            for j in range(self.n):
+                self.np[j] = (0,0,0)
+            self.np[i % self.n] = color
+            self.np.write()
+            await asyncio.sleep(.02)
+        self.clear()
 ...
 async def main():
     ...

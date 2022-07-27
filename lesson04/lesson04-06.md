@@ -69,18 +69,18 @@ async def main():
         await asyncio.sleep(.01)
 
 if __name__ == '__main__':
+    led_red = Led( Pin(26, Pin.OUT) )
+    led_green = Led( Pin(27, Pin.OUT) )
+
+    btn_red = Switch( Pin(18, Pin.IN, Pin.PULL_UP) )
+    btn_green = Switch( Pin(5, Pin.IN, Pin.PULL_UP) )
+    btn_blue = Switch( Pin(22, Pin.IN, Pin.PULL_UP) )
+
+    dotstar = TinyPICODotStar()
+    pwm = PWM(Pin(25, Pin.OUT), 10, 0)
+
+    dotstar_tasks = []
     try:
-        led_red = Led( Pin(26, Pin.OUT) )
-        led_green = Led( Pin(27, Pin.OUT) )
-
-        btn_red = Switch( Pin(18, Pin.IN, Pin.PULL_UP) )
-        btn_green = Switch( Pin(5, Pin.IN, Pin.PULL_UP) )
-        btn_blue = Switch( Pin(22, Pin.IN, Pin.PULL_UP) )
-
-        dotstar = TinyPICODotStar()
-        pwm = PWM(Pin(25, Pin.OUT), 10, 0)
-
-        dotstar_tasks = []
         # asyncio.run - top level entry point (should only be called once)
         asyncio.run(main())
     finally:
