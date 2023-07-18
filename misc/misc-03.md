@@ -31,6 +31,7 @@ class NP():
 #### Code
 ```Python
 from async_neopixel import NP
+from machine import Pin
 # replace n with correct pin
 # replace z with number of neopixels
 np = NP(Pin(n), z)
