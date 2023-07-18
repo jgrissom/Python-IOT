@@ -32,7 +32,8 @@ class NP():
 ```Python
 from async_neopixel import NP
 # replace n with correct pin
-np = NP(Pin(n), 24)
+# replace z with number of neopixels
+np = NP(Pin(n), z)
 np.on((255,0,0))
 np.clear()
 ```
@@ -54,7 +55,7 @@ import uasyncio as asyncio
         self.clear()
 
 async def main():
-    np = NP(Pin(4), 24)
+    np = NP(Pin(n), z)
 
     await np.async_flicker((0,0,255), .5)
 
