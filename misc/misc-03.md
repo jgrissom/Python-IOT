@@ -55,6 +55,8 @@ import uasyncio as asyncio
         self.clear()
 
 async def main():
+    # replace n with correct pin
+    # replace z with number of neopixels
     np = NP(Pin(n), z)
 
     await np.async_flicker((0,0,255), .5)
