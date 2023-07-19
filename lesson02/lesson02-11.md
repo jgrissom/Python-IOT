@@ -21,5 +21,5 @@
    * When the red button is pressed, flicker the red led & the dotstar red - use (255, 0, 0, .5)
    * When the green button is pressed, flicker the green led & the dotstar green - use (0, 255, 0, .5)
    * When the blue button is pressed, flicker the blue led & the dotstar blue - use (0, 0, 255, .5)
-   * When the yellow button is pressed, blink the yellow led & the dotstar yellow infinitely - use (255, 255, 0, .5)
+   * When the yellow button is pressed, flicker the yellow led & the dotstar yellow - use (255, 255, 0, .5)
    * Don't forget to kill the dotstar & turn off all leds when the program ends
