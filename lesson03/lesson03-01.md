@@ -23,7 +23,7 @@ def connect(ssid, password):
     print('network config:', wifi.ifconfig())
 ```
 #### Instructions
- - Create wifi module, connect() method - using the REPL, type:
+ - Create wifi module, connect() method - using the REPL, type (use guest network if on WCTC campus):
 ```Python
 import wifi
 wifi.connect('<ssid>', '<password>')
