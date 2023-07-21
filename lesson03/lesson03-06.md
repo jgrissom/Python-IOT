@@ -9,8 +9,8 @@
 ```Python
 import wifi
 wifi.connect('<ssid>', '<password>')
-import upip
-upip.install('urequests')
+import mip
+mip.install('urequests')
 ```
 
  - Examine the 'lib' folder on the micropython device
