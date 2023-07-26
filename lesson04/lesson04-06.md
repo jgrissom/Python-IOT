@@ -77,7 +77,7 @@ if __name__ == '__main__':
     btn_blue = Switch( Pin(22, Pin.IN, Pin.PULL_UP) )
 
     dotstar = TinyPICODotStar()
-    pwm = PWM(Pin(25, Pin.OUT), 10, 0)
+    pwm = PWM(Pin(25, Pin.OUT), 10, duty=0)
 
     dotstar_tasks = []
     try:
